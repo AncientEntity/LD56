@@ -3,6 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://blpfwpsik32ki" path="res://Assets/TempAssets/tempMine.png" id="1_w3p1j"]
 
 [node name="mine" type="Sprite2D"]
-position = Vector2(95.1702, 67.25)
-scale = Vector2(0.294053, 0.294053)
+position = Vector2(97, 68)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_w3p1j")

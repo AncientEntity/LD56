@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdnxqbo31us3h"]
+
+[ext_resource type="Texture2D" uid="uid://gjqcuv8bitp6" path="res://Assets/TempAssets/temp_farm.png" id="1_8gwsu"]
+
+[node name="farm" type="Sprite2D"]
+position = Vector2(97, 68)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_8gwsu")
