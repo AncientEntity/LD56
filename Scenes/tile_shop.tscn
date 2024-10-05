@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://qsbn5hsx1ae1" path="res://Assets/TempAssets/DashedShop.png" id="1_s8lq4"]
 [ext_resource type="Script" path="res://Scripts/shop_menu.gd" id="2_edrwi"]
 
-[node name="MenuButton" type="MenuButton"]
+[node name="tile_shop" type="MenuButton"]
 offset_left = -8.0
 offset_top = -8.0
 offset_right = 8.0

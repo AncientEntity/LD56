@@ -16,9 +16,11 @@ func _process(delta: float) -> void:
 	update_positions()
 	var mouse_position = get_viewport().get_mouse_position() 
 	if mouse_position.x < left_boundry:
-		position.x -= moveSpeed * delta * (1 - mouse_position.x/left_boundry)
+		if(mouse_position.x >= (left_boundry) - (viewport_size.x - right_boundry)):
+			position.x -= moveSpeed * delta * (1 - mouse_position.x/left_boundry)
 	elif mouse_position.x > right_boundry:
-		position.x += moveSpeed * delta * (1 - (viewport_size.x - mouse_position.x)/right_boundry)
+		if(mouse_position.x <= viewport_size.x):
+			position.x += moveSpeed * delta * (1 - (viewport_size.x - mouse_position.x)/right_boundry)
 	pass
 
 #updates all variable vector positions
