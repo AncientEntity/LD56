@@ -50,7 +50,7 @@ offset_bottom = 82.0
 [node name="WORLD" type="Node" parent="."]
 
 [node name="LittleGuy" parent="WORLD" instance=ExtResource("4_xx35y")]
-position = Vector2(-474, 16)
+position = Vector2(-447, -9)
 
 [node name="Ground" type="StaticBody2D" parent="WORLD"]
 position = Vector2(0, 84)
