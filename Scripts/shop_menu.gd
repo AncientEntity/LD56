@@ -45,10 +45,9 @@ func on_item_selected(id):
 	if spawned_asset:
 		free_childen()
 		self.add_child(spawned_asset)
-		spawned_asset.position = spawned_asset.position - pos_offset
+		spawned_asset.position =  spawned_asset.position - pos_offset
 		spawned_asset.scale = asset_scale
 	update_items()
-
 
 
 func free_childen():
