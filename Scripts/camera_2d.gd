@@ -16,7 +16,6 @@ func _process(delta: float) -> void:
 		position.x -= moveSpeed * delta * (1 - mouseXPercent/screen_delta)
 	elif 1.0 - mouseXPercent <= screen_delta:
 		position.x += moveSpeed * delta * (1 - (1 - mouseXPercent)/screen_delta)
-	print(mouseXPercent,", ", mouse_position.x,", ", get_window().content_scale_size.x)
 			
 	if Input.is_action_just_pressed("toggleFullscreen"):
 		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_WINDOWED:
