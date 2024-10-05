@@ -1,7 +1,7 @@
 [gd_scene load_steps=34 format=3 uid="uid://b7lnjnot2mw2x"]
 
 [ext_resource type="Texture2D" uid="uid://cyj5iwhj3idv7" path="res://Assets/Ryan/Speeder.png" id="1_lbd6m"]
-[ext_resource type="Script" path="res://Scenes/little_guy.gd" id="1_qbqcl"]
+[ext_resource type="Script" path="res://Scripts/little_guy.gd" id="1_qbqcl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ho3do"]
 radius = 21.17
