@@ -26,3 +26,10 @@ offset_left = 234.0
 offset_top = -79.0
 offset_right = 392.0
 offset_bottom = 79.0
+
+[node name="MenuButton2" parent="Shop Control" instance=ExtResource("4_c5o3u")]
+layout_mode = 0
+offset_left = -404.0
+offset_top = -79.0
+offset_right = -246.0
+offset_bottom = 79.0
