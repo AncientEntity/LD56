@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvyo2haycvpii"]
+[gd_scene load_steps=4 format=3 uid="uid://cvyo2haycvpii"]
 
-[ext_resource type="Texture2D" uid="uid://dtpg4qetk3ev1" path="res://Assets/SimpleBackground.png" id="1_q0eq7"]
+[ext_resource type="Texture2D" uid="uid://dtpg4qetk3ev1" path="res://Assets/TempAssets/SimpleBackground.png" id="1_q0eq7"]
 [ext_resource type="PackedScene" uid="uid://c85brqjbs6xhp" path="res://Scenes/camera_2d.tscn" id="2_x5va0"]
+[ext_resource type="PackedScene" uid="uid://dggdnjch355si" path="res://Scenes/shop.tscn" id="3_qyrbu"]
 
 [node name="GameScene" type="Node2D"]
 
@@ -12,3 +13,9 @@ texture = ExtResource("1_q0eq7")
 
 [node name="Camera2D" parent="." instance=ExtResource("2_x5va0")]
 position = Vector2(-11, -26)
+
+[node name="Shop" parent="." instance=ExtResource("3_qyrbu")]
+offset_left = -343.0
+offset_top = -114.0
+offset_right = -166.0
+offset_bottom = 63.0
