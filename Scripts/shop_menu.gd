@@ -58,7 +58,7 @@ func free_childen():
 
 
 func on_mouse_entered():
-	print("Focusing")
+	pass
 
 func on_mouse_exited():
-	print("stopped")
+	pass
