@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=4 uid="uid://c86371r6f6oh3"]
 
 [ext_resource type="PackedScene" uid="uid://c85brqjbs6xhp" path="res://Scenes/camera_2d.tscn" id="2_x5va0"]
-[ext_resource type="TileSet" uid="uid://46uh3g7vby3q" path="res://Assets/groundTiles/groundtileset.tres" id="4_5ifgc"]
-[ext_resource type="PackedScene" uid="uid://5oos01fy60ou" path="res://Scenes/tile_shop.tscn" id="4_c5o3u"]
-[ext_resource type="PackedScene" uid="uid://b7lnjnot2mw2x" path="res://Scenes/little_guy.tscn" id="4_xx35y"]
+[ext_resource type="TileSet" uid="uid://c22i274j2sebl" path="res://Assets/groundTiles/groundtileset.tres" id="4_5ifgc"]
+[ext_resource type="PackedScene" uid="uid://dnkr0qercn1qi" path="res://Scenes/shop_grid.tscn" id="4_hxhm7"]
+[ext_resource type="PackedScene" path="res://Scenes/little_guy.tscn" id="4_xx35y"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mxl2y"]
 
@@ -14,33 +14,6 @@ size = Vector2(20, 344.484)
 
 [node name="Camera2D" parent="." instance=ExtResource("2_x5va0")]
 position = Vector2(-11, -26)
-
-[node name="Shop Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="tile_shop" parent="Shop Control" instance=ExtResource("4_c5o3u")]
-layout_mode = 0
-offset_left = 136.0
-offset_top = -74.0
-offset_right = 288.0
-offset_bottom = 78.0
-
-[node name="tile_shop2" parent="Shop Control" instance=ExtResource("4_c5o3u")]
-layout_mode = 0
-offset_left = 310.0
-offset_top = -73.0
-offset_right = 462.0
-offset_bottom = 79.0
-
-[node name="tile_shop3" parent="Shop Control" instance=ExtResource("4_c5o3u")]
-layout_mode = 0
-offset_left = 483.0
-offset_top = -70.0
-offset_right = 635.0
-offset_bottom = 82.0
 
 [node name="WORLD" type="Node" parent="."]
 
@@ -83,3 +56,7 @@ position = Vector2(-458, -9)
 
 [node name="LittleGuy3" parent="WORLD" instance=ExtResource("4_xx35y")]
 position = Vector2(378, -11)
+
+[node name="world_buying_grid" parent="." instance=ExtResource("4_hxhm7")]
+offset_top = -100.0
+offset_bottom = 50.0
