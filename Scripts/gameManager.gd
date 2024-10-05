@@ -1,7 +1,7 @@
 extends Node2D
 
-var max_left = 5
-var max_right = 5
+var max_left = 2
+var max_right = 2
 
 func _ready() -> void:
 	pass

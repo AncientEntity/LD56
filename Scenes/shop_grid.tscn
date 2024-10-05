@@ -25,9 +25,6 @@ columns = 1024
 [node name="tile_shop" parent="GridRight" instance=ExtResource("2_ca2bs")]
 layout_mode = 2
 
-[node name="tile_shop2" parent="GridRight" instance=ExtResource("2_ca2bs")]
-layout_mode = 2
-
 [node name="GridLeft" type="GridContainer" parent="."]
 custom_minimum_size = Vector2(100, 100)
 layout_direction = 3
@@ -40,9 +37,6 @@ theme_override_constants/h_separation = 60
 columns = 1024
 
 [node name="tile_shop2" parent="GridLeft" instance=ExtResource("2_ca2bs")]
-layout_mode = 2
-
-[node name="tile_shop3" parent="GridLeft" instance=ExtResource("2_ca2bs")]
 layout_mode = 2
 
 [node name="RightButton" type="Button" parent="."]
