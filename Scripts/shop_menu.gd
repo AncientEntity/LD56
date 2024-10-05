@@ -2,6 +2,11 @@ extends MenuButton
 
 #prefabs
 var house_asset = preload("res://Scenes/house.tscn")
+var mine_asset = preload("res://Scenes/mine.tscn")
+
+var asset_size = 0.35
+var asset_scale = Vector2(asset_size, asset_size) 
+var var_offset = 5
 
 #Menu holder
 var popup_menu
@@ -45,18 +50,36 @@ func on_item_selected(id):
 			print("Tried to %s"%[item_text])
 		3 : 
 			print("Tried to %s"%[item_text])
+			spawn_mine()
 	update_items()
 
 
 func spawn_house() -> void:
 	var house = house_asset.instantiate()
 	if house:
+		free_childen()
 		get_parent().add_child(house)
 		house.position = get_spawnposition()
+		house.scale = asset_scale
 	else:
 		print("Failed to instantiate house.")
 
+func spawn_mine() -> void:
+	var mine = mine_asset.instantiate()
+	if mine:
+		free_childen()
+		get_parent().add_child(mine)
+		mine.position = get_spawnposition()
+		mine.scale = asset_scale
+	else:
+		print("Failed to instantiate house.")
+
+#getting correct postion for Vector2 to spawn object at
 func get_spawnposition() -> Vector2:
 	var current_position = get_global_position()
 	var popup_menu_size = popup_menu.get_size()
-	return Vector2(current_position.x + (popup_menu_size.x / 2), current_position.y + (popup_menu_size.y))
+	return Vector2(current_position.x + (popup_menu_size.x / 2), current_position.y + (popup_menu_size.y) - var_offset)
+
+func free_childen():
+	for child in popup_menu.get_children():
+		child.queue_free()

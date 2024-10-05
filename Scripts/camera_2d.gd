@@ -3,7 +3,7 @@ extends Camera2D
 var viewport_size
 var left_boundry
 var right_boundry
-var moveSpeed = 500			
+var moveSpeed = 500
 var screen_delta = 0.25	    #% of the side of screen needed to move the camera
 
 # Called when the node enters the scene tree for the first time.
