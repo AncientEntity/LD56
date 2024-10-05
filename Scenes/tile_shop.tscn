@@ -11,6 +11,7 @@ texture = ExtResource("1_s8lq4")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uu3pj"]
 
 [node name="tile_shop" type="MenuButton"]
+custom_minimum_size = Vector2(150, 150)
 offset_left = -8.0
 offset_top = -8.0
 offset_right = 8.0
