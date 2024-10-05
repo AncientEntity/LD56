@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c86371r6f6oh3"]
+[gd_scene load_steps=7 format=4 uid="uid://c86371r6f6oh3"]
 
-[ext_resource type="Texture2D" uid="uid://dtpg4qetk3ev1" path="res://Assets/TempAssets/SimpleBackground.png" id="1_q0eq7"]
 [ext_resource type="PackedScene" uid="uid://c85brqjbs6xhp" path="res://Scenes/camera_2d.tscn" id="2_x5va0"]
+[ext_resource type="TileSet" uid="uid://46uh3g7vby3q" path="res://Assets/groundTiles/groundtileset.tres" id="4_5ifgc"]
 [ext_resource type="PackedScene" uid="uid://5oos01fy60ou" path="res://Scenes/tile_shop.tscn" id="4_c5o3u"]
 [ext_resource type="PackedScene" uid="uid://b7lnjnot2mw2x" path="res://Scenes/little_guy.tscn" id="4_xx35y"]
 
@@ -11,11 +11,6 @@
 size = Vector2(20, 344.484)
 
 [node name="GameScene" type="Node2D"]
-
-[node name="TestBackground" type="Sprite2D" parent="."]
-position = Vector2(3, 14)
-scale = Vector2(1.51509, 1.10669)
-texture = ExtResource("1_q0eq7")
 
 [node name="Camera2D" parent="." instance=ExtResource("2_x5va0")]
 position = Vector2(-11, -26)
@@ -49,11 +44,8 @@ offset_bottom = 82.0
 
 [node name="WORLD" type="Node" parent="."]
 
-[node name="LittleGuy" parent="WORLD" instance=ExtResource("4_xx35y")]
-position = Vector2(-447, -9)
-
 [node name="Ground" type="StaticBody2D" parent="WORLD"]
-position = Vector2(0, 84)
+position = Vector2(0, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WORLD/Ground"]
 position = Vector2(-1, -12)
@@ -78,8 +70,16 @@ position = Vector2(-1, -141)
 scale = Vector2(1.405, 1.405)
 shape = SubResource("RectangleShape2D_8a24s")
 
+[node name="TileMapLayer" type="TileMapLayer" parent="WORLD"]
+z_index = 150
+tile_map_data = PackedByteArray("AAD7/wAABwAAAAAAAAD8/wAACAAAAAAAAAD9/wAABwAAAAAAAAD+/wAACAAAAAAAAAD//wAABwAAAAAAAAAAAAAACAAAAAAAAAABAAAABwAAAAAAAAACAAAACAAAAAAAAAADAAAACAAAAAAAAAAEAAAABwAAAAAAAAAFAAAABwAAAAAAAAD3/wAABwAAAAAAAAD4/wAACAAAAAAAAAD5/wAABwAAAAAAAAD6/wAACAAAAAAAAAAGAAAACAAAAAAAAAAHAAAACAAAAAAAAAAIAAAACAAAAAAAAAAJAAAABwAAAAAAAAAKAAAABwAAAAAAAAALAAAACAAAAAAAAAAMAAAACAAAAAAAAAANAAAABwAAAAAAAAD2/wAABwAAAAAAAAD1/wAACAAAAAAAAAD0/wAACAAAAAAAAADz/wAABwAAAAAAAADz/wEACQAAAAAAAAD0/wEACQAAAAAAAAD1/wEACQAAAAAAAAD2/wEACQAAAAAAAAD3/wEACQAAAAAAAAD4/wEACQAAAAAAAAD5/wEACQAAAAAAAAD6/wEACQAAAAAAAAD7/wEACQAAAAAAAAD8/wEACQAAAAAAAAD9/wEACQAAAAAAAAD+/wEACQAAAAAAAAD//wEACQAAAAAAAAAAAAEACQAAAAAAAAABAAEACQAAAAAAAAACAAEACQAAAAAAAAADAAEACQAAAAAAAAAEAAEACQAAAAAAAAAFAAEACQAAAAAAAAAGAAEACQAAAAAAAAAHAAEACQAAAAAAAAAIAAEACQAAAAAAAAAJAAEACQAAAAAAAAAKAAEACQAAAAAAAAALAAEACQAAAAAAAAAMAAEACQAAAAAAAAANAAEACQAAAAAAAADz/wIACgAAAAAAAAD0/wIACgAAAAAAAAD1/wIACgAAAAAAAAD2/wIACgAAAAAAAAD3/wIACgAAAAAAAAD4/wIACgAAAAAAAAD5/wIACgAAAAAAAAD6/wIACgAAAAAAAAD7/wIACgAAAAAAAAD8/wIACgAAAAAAAAD9/wIACgAAAAAAAAD+/wIACgAAAAAAAAD//wIACgAAAAAAAAAAAAIACgAAAAAAAAABAAIACgAAAAAAAAACAAIACgAAAAAAAAADAAIACgAAAAAAAAAEAAIACgAAAAAAAAAFAAIACgAAAAAAAAAGAAIACgAAAAAAAAAHAAIACgAAAAAAAAAIAAIACgAAAAAAAAAJAAIACgAAAAAAAAAKAAIACgAAAAAAAAALAAIACgAAAAAAAAAMAAIACgAAAAAAAAANAAIACgAAAAAAAAA=")
+tile_set = ExtResource("4_5ifgc")
+
+[node name="LittleGuy" parent="WORLD" instance=ExtResource("4_xx35y")]
+position = Vector2(-276, -5)
+
 [node name="LittleGuy2" parent="WORLD" instance=ExtResource("4_xx35y")]
-position = Vector2(-222, 9)
+position = Vector2(-458, -9)
 
 [node name="LittleGuy3" parent="WORLD" instance=ExtResource("4_xx35y")]
-position = Vector2(384, 9)
+position = Vector2(378, -11)
