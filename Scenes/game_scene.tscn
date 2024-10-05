@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvyo2haycvpii"]
+[gd_scene load_steps=7 format=3 uid="uid://c86371r6f6oh3"]
 
 [ext_resource type="Texture2D" uid="uid://dtpg4qetk3ev1" path="res://Assets/TempAssets/SimpleBackground.png" id="1_q0eq7"]
 [ext_resource type="PackedScene" uid="uid://c85brqjbs6xhp" path="res://Scenes/camera_2d.tscn" id="2_x5va0"]
 [ext_resource type="PackedScene" uid="uid://5oos01fy60ou" path="res://Scenes/tile_shop.tscn" id="4_c5o3u"]
+[ext_resource type="PackedScene" uid="uid://b7lnjnot2mw2x" path="res://Scenes/little_guy.tscn" id="4_xx35y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vptux"]
+size = Vector2(950.89, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8a24s"]
+size = Vector2(20, 344.484)
 
 [node name="GameScene" type="Node2D"]
 
@@ -40,3 +47,40 @@ offset_left = 483.0
 offset_top = -70.0
 offset_right = 635.0
 offset_bottom = 82.0
+
+[node name="LittleGuy" parent="." instance=ExtResource("4_xx35y")]
+position = Vector2(-356, 43)
+
+[node name="LittleGuy2" parent="." instance=ExtResource("4_xx35y")]
+position = Vector2(-96, 44)
+
+[node name="LittleGuy3" parent="." instance=ExtResource("4_xx35y")]
+position = Vector2(206, 43)
+
+[node name="WORLD" type="Node" parent="."]
+
+[node name="Ground" type="StaticBody2D" parent="WORLD"]
+position = Vector2(0, 84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WORLD/Ground"]
+position = Vector2(-1, 0)
+scale = Vector2(1.405, 1.405)
+shape = SubResource("RectangleShape2D_vptux")
+
+[node name="LeftWall" type="StaticBody2D" parent="WORLD"]
+unique_name_in_owner = true
+position = Vector2(-617, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WORLD/LeftWall"]
+position = Vector2(-1, -141)
+scale = Vector2(1.405, 1.405)
+shape = SubResource("RectangleShape2D_8a24s")
+
+[node name="RightWall" type="StaticBody2D" parent="WORLD"]
+unique_name_in_owner = true
+position = Vector2(621, 26)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WORLD/RightWall"]
+position = Vector2(-1, -141)
+scale = Vector2(1.405, 1.405)
+shape = SubResource("RectangleShape2D_8a24s")
