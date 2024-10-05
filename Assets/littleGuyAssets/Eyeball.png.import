@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfm31uiq06wje"
-path="res://.godot/imported/ground.png-ecafb8f23075b0a033c5fb91277e9dfe.ctex"
+uid="uid://bu8g66msvdpds"
+path="res://.godot/imported/Eyeball.png-b782aae3ccb9e54faa31666f74d157e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/groundTiles/ground.png"
-dest_files=["res://.godot/imported/ground.png-ecafb8f23075b0a033c5fb91277e9dfe.ctex"]
+source_file="res://Assets/littleGuyAssets/Eyeball.png"
+dest_files=["res://.godot/imported/Eyeball.png-b782aae3ccb9e54faa31666f74d157e5.ctex"]
 
 [params]
 
