@@ -15,6 +15,7 @@ texture = ExtResource("1_q0eq7")
 position = Vector2(-11, -26)
 
 [node name="Shop" parent="." instance=ExtResource("3_qyrbu")]
+visible = false
 offset_left = -343.0
 offset_top = -114.0
 offset_right = -166.0
