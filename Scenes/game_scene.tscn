@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvyo2haycvpii"]
+
+[ext_resource type="Texture2D" uid="uid://dtpg4qetk3ev1" path="res://Assets/SimpleBackground.png" id="1_q0eq7"]
+[ext_resource type="PackedScene" uid="uid://c85brqjbs6xhp" path="res://Scenes/camera_2d.tscn" id="2_x5va0"]
+
+[node name="GameScene" type="Node2D"]
+
+[node name="TestBackground" type="Sprite2D" parent="."]
+position = Vector2(-2, 13)
+scale = Vector2(1.51509, 1.10669)
+texture = ExtResource("1_q0eq7")
+
+[node name="Camera2D" parent="." instance=ExtResource("2_x5va0")]
+position = Vector2(-11, -26)
