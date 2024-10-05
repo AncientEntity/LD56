@@ -57,5 +57,4 @@ func WanderDirection():
 func IdleTask(delta : float):
 	WanderDirection()
 	var direction = moveSpeed * moveDirection
-	print(moveSpeed,",", moveDirection,",", direction,",", Time.get_unix_time_from_system() - lastDirectionChangeTime)
 	self.linear_velocity.x = direction

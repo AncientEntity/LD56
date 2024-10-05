@@ -234,4 +234,5 @@ z_index = 50
 texture_filter = 1
 scale = Vector2(2.98, 2.98)
 sprite_frames = SubResource("SpriteFrames_c0u1w")
-frame_progress = 0.590067
+autoplay = "default"
+frame_progress = 0.660426
