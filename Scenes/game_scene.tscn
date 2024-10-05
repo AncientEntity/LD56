@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvyo2haycvpii"]
+[gd_scene load_steps=7 format=3 uid="uid://cvyo2haycvpii"]
 
 [ext_resource type="Texture2D" uid="uid://dtpg4qetk3ev1" path="res://Assets/TempAssets/SimpleBackground.png" id="1_q0eq7"]
 [ext_resource type="PackedScene" uid="uid://c85brqjbs6xhp" path="res://Scenes/camera_2d.tscn" id="2_x5va0"]
 [ext_resource type="PackedScene" uid="uid://5oos01fy60ou" path="res://Scenes/tile_shop.tscn" id="4_c5o3u"]
-[ext_resource type="PackedScene" uid="uid://bm8pf855fmmiu" path="res://Scenes/little_guy.tscn" id="4_rh7hq"]
-[ext_resource type="Script" path="res://Scenes/little_guy.gd" id="5_vlnds"]
+[ext_resource type="PackedScene" uid="uid://b7lnjnot2mw2x" path="res://Scenes/little_guy.tscn" id="4_rh7hq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4hk1"]
 size = Vector2(1297, 20)
@@ -42,12 +41,6 @@ offset_top = -79.0
 offset_right = -246.0
 offset_bottom = 79.0
 
-[node name="LittleGuy" parent="." instance=ExtResource("4_rh7hq")]
-position = Vector2(-197, 2)
-can_sleep = false
-lock_rotation = true
-script = ExtResource("5_vlnds")
-
 [node name="WORLDBounds" type="Node2D" parent="."]
 
 [node name="GROUND" type="StaticBody2D" parent="WORLDBounds"]
@@ -72,3 +65,12 @@ position = Vector2(591, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WORLDBounds/RightWall"]
 position = Vector2(1.5, -117)
 shape = SubResource("RectangleShape2D_wjvg2")
+
+[node name="LittleGuy" parent="." instance=ExtResource("4_rh7hq")]
+position = Vector2(-426, 23)
+
+[node name="LittleGuy2" parent="." instance=ExtResource("4_rh7hq")]
+position = Vector2(-175, 6)
+
+[node name="LittleGuy3" parent="." instance=ExtResource("4_rh7hq")]
+position = Vector2(260, 14)

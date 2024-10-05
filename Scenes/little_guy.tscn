@@ -1,6 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://bm8pf855fmmiu"]
+[gd_scene load_steps=34 format=3 uid="uid://b7lnjnot2mw2x"]
 
 [ext_resource type="Texture2D" uid="uid://cyj5iwhj3idv7" path="res://Assets/Ryan/Speeder.png" id="1_lbd6m"]
+[ext_resource type="Script" path="res://Scenes/little_guy.gd" id="1_qbqcl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ho3do"]
 radius = 21.17
@@ -218,7 +219,11 @@ animations = [{
 }]
 
 [node name="LittleGuy" type="RigidBody2D"]
-position = Vector2(-196, 10)
+position = Vector2(0, 16)
+collision_layer = 0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_qbqcl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -24)
