@@ -54,8 +54,6 @@ func _can_develop(right : bool):
 func _on_button_pressed(right : bool) -> void:
 	_update_grid(right)
 
-
-
 func sell_building(id : int):
 	match abs(id):
 		1:
@@ -67,18 +65,6 @@ func sell_building(id : int):
 		4:
 			game_manager.money += game_manager.tower_cost/(2 if id > 0 else -1)
 	game_manager.update_lables()
-
-#func buy_building(id : int):
-	#match id:
-		#1:
-			#game_manager.money -= game_manager.house_cost
-		#2:
-			#game_manager.money -= game_manager.farm_cost
-		#3:
-			#game_manager.money -= game_manager.mine_cost
-		#4:
-			#game_manager.money -= game_manager.tower_cost
-	#game_manager.update_lables()
 
 func get_prices(id : int, sell : bool) -> int:
 	match id:
