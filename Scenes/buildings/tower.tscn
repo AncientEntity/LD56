@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4pbkdfso4nuf"]
+[gd_scene load_steps=3 format=3 uid="uid://r5pwxfyn4vt0"]
 
 [ext_resource type="PackedScene" uid="uid://bbmokkmpfdeg6" path="res://Scenes/buildings/BaseBuilding.tscn" id="1_b1gqn"]
-[ext_resource type="Texture2D" uid="uid://t6m4jk2chp0x" path="res://Assets/groundTiles/tower.png" id="2_fdg04"]
+[ext_resource type="Texture2D" uid="uid://brr2trwc64gwx" path="res://Assets/groundTiles/tower.png" id="2_fdg04"]
 
 [node name="BaseBuilding" instance=ExtResource("1_b1gqn")]
 

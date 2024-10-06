@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7lnjnot2mw2x"]
+[gd_scene load_steps=10 format=3 uid="uid://b7lnjnot2mw2x"]
 
 [ext_resource type="Script" path="res://Scripts/little_guy.gd" id="1_qbqcl"]
 [ext_resource type="Texture2D" uid="uid://clnv3mutvl8n4" path="res://Assets/littleGuyAssets/Body2.png" id="2_ftvnn"]
@@ -30,6 +30,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0uebi"]
+radius = 195.164
 
 [node name="LittleGuy" type="RigidBody2D"]
 z_index = 50
@@ -71,3 +74,11 @@ target_position = Vector2(-27, 1)
 [node name="RayRight" type="RayCast2D" parent="."]
 position = Vector2(0, -5)
 target_position = Vector2(27, 0)
+
+[node name="AgroZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AgroZone"]
+shape = SubResource("CircleShape2D_0uebi")
+
+[connection signal="area_entered" from="AgroZone" to="." method="_on_agro_zone_area_entered"]
+[connection signal="area_exited" from="AgroZone" to="." method="_on_agro_zone_area_exited"]

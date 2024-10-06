@@ -13,6 +13,5 @@ func _process(delta: float) -> void:
 	super._process(delta)
 	
 func _physics_process(delta: float) -> void:
-	print(attacking)
 	if not attacking:
 		move_local_x(direction * speed * delta)
