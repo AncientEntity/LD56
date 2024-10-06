@@ -4,16 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://c85brqjbs6xhp" path="res://Scenes/camera_2d.tscn" id="2_x5va0"]
 [ext_resource type="TileSet" uid="uid://46uh3g7vby3q" path="res://Assets/groundTiles/groundtileset.tres" id="4_5ifgc"]
 [ext_resource type="PackedScene" uid="uid://dnkr0qercn1qi" path="res://Scenes/shop_grid.tscn" id="4_hxhm7"]
-[ext_resource type="PackedScene" path="res://Scenes/little_guy.tscn" id="4_xx35y"]
+[ext_resource type="PackedScene" uid="uid://cwswjklof8mas" path="res://Scenes/little_guy.tscn" id="4_xx35y"]
 [ext_resource type="Script" path="res://Scripts/money_label.gd" id="5_fn7jv"]
 [ext_resource type="PackedScene" uid="uid://drhmty32g8h14" path="res://Scenes/Pumpkin.tscn" id="6_x6mbr"]
 [ext_resource type="PackedScene" uid="uid://dxnvqbog5sne3" path="res://Scenes/tall_grass.tscn" id="8_xhr1o"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mxl2y"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_re4sx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uiok8"]
+size = Vector2(371.53, 15.694)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rilrv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1vsg"]
+size = Vector2(340.925, 24.1993)
 
 [node name="GameScene" type="Node2D"]
 
@@ -56,16 +58,16 @@ position = Vector2(14.3267, 604)
 scale = Vector2(0.95511, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WORLD/GrassRight/RightWall"]
-position = Vector2(-1, -141)
+position = Vector2(-4.02502, -211)
 rotation = -1.5708
 scale = Vector2(1.405, 1.405)
-shape = SubResource("WorldBoundaryShape2D_re4sx")
+shape = SubResource("RectangleShape2D_uiok8")
 one_way_collision = true
 
-[node name="ColorRect" type="ColorRect" parent="WORLD/GrassRight/RightWall/CollisionShape2D"]
-offset_left = -125.0
-offset_top = -1.0
-offset_right = 113.0
+[node name="TestingRect" type="ColorRect" parent="WORLD/GrassRight/RightWall/CollisionShape2D"]
+offset_left = -174.0
+offset_top = -8.0
+offset_right = 187.0
 offset_bottom = 8.0
 
 [node name="GrassLeft" parent="WORLD" instance=ExtResource("8_xhr1o")]
@@ -77,16 +79,17 @@ position = Vector2(1178.61, 595)
 scale = Vector2(0.95511, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WORLD/GrassLeft/LeftWall"]
-position = Vector2(-1, -141)
+position = Vector2(-28, -203.5)
 rotation = 1.5708
 scale = Vector2(1.405, 1.405)
-shape = SubResource("WorldBoundaryShape2D_rilrv")
+shape = SubResource("RectangleShape2D_m1vsg")
 one_way_collision = true
 
-[node name="ColorRect" type="ColorRect" parent="WORLD/GrassLeft/LeftWall/CollisionShape2D"]
-offset_left = -113.0
-offset_right = 40.0
-offset_bottom = 14.0
+[node name="TestingRect" type="ColorRect" parent="WORLD/GrassLeft/LeftWall/CollisionShape2D"]
+offset_left = -172.0
+offset_top = -12.0
+offset_right = 178.0
+offset_bottom = 12.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="WORLD"]
 z_index = 150
