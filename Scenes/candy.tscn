@@ -28,4 +28,4 @@ animations = [{
 position = Vector2(4, -19)
 sprite_frames = SubResource("SpriteFrames_j87wf")
 autoplay = "default"
-frame_progress = 0.161529
+frame_progress = 0.224717
