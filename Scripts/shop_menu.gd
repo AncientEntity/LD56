@@ -50,6 +50,7 @@ func on_item_selected(id):
 			free_childen()
 			self.add_child(spawned_asset)
 			spawned_asset.position =  spawned_asset.position - pos_offset
+			spawned_asset.parentShop = self
 			
 			self.modulate = Color("ffffff")
 			self.icon = null

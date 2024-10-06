@@ -4,6 +4,7 @@ var myGuy
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	super._ready()
 	myGuy = guyScene.instantiate()
 	get_tree().get_root().get_node("GameScene/WORLD").add_child(myGuy)
 	myGuy.global_position = $Sprite2D.global_position
