@@ -39,11 +39,12 @@ func update_items():
 
 # Function to handle item selection
 func on_item_selected(id):
-	var item_text = self.get_popup().get_item_text(id-1)
+	
 	#check if money allows
 	if(id == 0):
 		destroy()
 	else:
+		var item_text = self.get_popup().get_item_text(id-1)
 		var spawned_asset = items[id]["asset"].instantiate()
 		if spawned_asset:
 			free_childen()
