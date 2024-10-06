@@ -14,9 +14,10 @@ var cur_asset_id
 
 #Id { key : text, key : price }
 var items = {
-	1: {"text": "Buy House", "price": 0, "asset": preload("res://Scenes/buildings/house.tscn")},	
-	2: {"text": "Buy Farm", "price": 0, "asset": preload("res://Scenes/buildings/farm.tscn")},
-	3: {"text": "Buy Mine", "price": 0, "asset": preload("res://Scenes/buildings/mine.tscn")},
+	1: {"text": "Buy House", "price": 100, "asset": preload("res://Scenes/buildings/house.tscn")},	
+	2: {"text": "Buy Farm", "price": 200, "asset": preload("res://Scenes/buildings/farm.tscn")},
+	3: {"text": "Buy Mine", "price": 300, "asset": preload("res://Scenes/buildings/mine.tscn")},
+	4: {"text": "Buy Tower", "price": 300, "asset": preload("res://Scenes/buildings/tower.tscn")},
 }
 
 func _ready() -> void:
