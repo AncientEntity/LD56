@@ -1,9 +1,9 @@
 extends Control
-@onready var button: Button = $Button		#Temp
+#@onready var button: Button = $Button		#Temp
 
 @onready var grid_right: GridContainer = $GridRight
 @onready var grid_left: GridContainer = $GridLeft
-@onready var game_scene: Node2D = $".."
+@onready var game_manager: Node = %GameManager
 
 var tile_shop_asset = preload("res://Scenes/tile_shop.tscn")	#Shop Scene
 
@@ -13,8 +13,8 @@ var grids = {
 }
 
 func _ready() -> void:	
-	grids[1]["max"] = game_scene.max_right
-	grids[2]["max"] = game_scene.max_left
+	grids[1]["max"] = game_manager.max_right
+	grids[2]["max"] = game_manager.max_left
 	
 	#pre-loads max grid right away 
 	while _can_develop(true):
@@ -27,8 +27,8 @@ func _ready() -> void:
 		self.grid_left.add_child(tile_asset)
 
 func _update_grid(right: bool):
-	grids[1]["max"] = game_scene.max_right
-	grids[2]["max"] = game_scene.max_left
+	grids[1]["max"] = game_manager.max_right
+	grids[2]["max"] = game_manager.max_left
 	
 	var tile_asset
 	if(_can_develop(true) && right):
@@ -53,3 +53,13 @@ func _can_develop(right : bool):
 
 func _on_button_pressed(right : bool) -> void:
 	_update_grid(right)
+
+func get_prices(id : int) -> int:
+	match id:
+		1:
+			return game_manager.house_cost
+		2:
+			return game_manager.farm_cost
+		3:
+			return game_manager.mine_cost
+	return 0

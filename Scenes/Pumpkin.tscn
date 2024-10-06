@@ -143,7 +143,7 @@ scale = Vector2(0.532407, 0.532407)
 texture = ExtResource("1_hauf0")
 
 [node name="Candle" type="Sprite2D" parent="."]
-position = Vector2(-90.6667, 290.222)
+position = Vector2(-78.8869, 291.13)
 scale = Vector2(1.1358, 1.3251)
 texture = ExtResource("2_qdwyv")
 
@@ -154,8 +154,8 @@ animation = &"fire2"
 autoplay = "fire1"
 
 [node name="Candle2" type="Sprite2D" parent="."]
-position = Vector2(0, 290.222)
-scale = Vector2(1.1358, 1.3251)
+position = Vector2(5.725, 265.36)
+scale = Vector2(1.33312, 1.5553)
 texture = ExtResource("2_qdwyv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Candle2"]
@@ -165,8 +165,8 @@ animation = &"fire2"
 autoplay = "fire2"
 
 [node name="Candle3" type="Sprite2D" parent="."]
-position = Vector2(90, 290.222)
-scale = Vector2(1.1358, 1.3251)
+position = Vector2(86.4, 309.913)
+scale = Vector2(0.977322, 1.14021)
 texture = ExtResource("2_qdwyv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Candle3"]
@@ -176,9 +176,12 @@ animation = &"fire3"
 autoplay = "fire3"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visibility_layer = 2
 z_index = -1
-offset_left = -346.667
-offset_top = -77.3333
-offset_right = 344.333
-offset_bottom = 430.667
+offset_left = -366.261
+offset_top = -78.887
+offset_right = 329.739
+offset_bottom = 432.113
+mouse_filter = 2
 color = Color(0.197744, 0.0836477, 0, 1)
+metadata/_edit_use_anchors_ = true

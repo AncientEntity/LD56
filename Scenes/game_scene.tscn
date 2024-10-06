@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=4 uid="uid://c86371r6f6oh3"]
 
-[ext_resource type="Script" path="res://Scripts/gameManager.gd" id="1_gtn57"]
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_gtn57"]
 [ext_resource type="PackedScene" uid="uid://c85brqjbs6xhp" path="res://Scenes/camera_2d.tscn" id="2_x5va0"]
 [ext_resource type="TileSet" uid="uid://46uh3g7vby3q" path="res://Assets/groundTiles/groundtileset.tres" id="4_5ifgc"]
 [ext_resource type="PackedScene" uid="uid://dnkr0qercn1qi" path="res://Scenes/shop_grid.tscn" id="4_hxhm7"]
@@ -13,7 +13,14 @@
 size = Vector2(20, 344.484)
 
 [node name="GameScene" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("1_gtn57")
+
+[node name="world_buying_grid" parent="." instance=ExtResource("4_hxhm7")]
+offset_top = -100.0
+offset_bottom = 50.0
 
 [node name="Pumpkin" parent="." instance=ExtResource("6_x6mbr")]
 z_index = -1
@@ -63,7 +70,3 @@ position = Vector2(-458, -9)
 
 [node name="LittleGuy3" parent="WORLD" instance=ExtResource("4_xx35y")]
 position = Vector2(378, -11)
-
-[node name="world_buying_grid" parent="." instance=ExtResource("4_hxhm7")]
-offset_top = -100.0
-offset_bottom = 50.0

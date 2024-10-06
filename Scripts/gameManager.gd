@@ -1,12 +1,11 @@
-extends Node2D
+extends Node
 
 var max_left = 2
 var max_right = 2
 
+var house_cost = 100
+var mine_cost = 100
+var farm_cost = 100
+
 func _ready() -> void:
 	pass
-
-func get_max(right : bool) -> int:
-	if(right):
-		return max_right
-	return max_left
