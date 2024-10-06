@@ -15,5 +15,7 @@ var tower_cost = 300
 
 var money = 10000
 
+var roundState = CEnums.ERoundState.Invasion
+
 func update_lables():
 	money_lable.update_text()

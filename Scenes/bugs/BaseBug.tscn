@@ -18,6 +18,7 @@ shape = SubResource("RectangleShape2D_ee87x")
 [node name="LeftRay" type="RayCast2D" parent="."]
 position = Vector2(-173, 0)
 target_position = Vector2(-50, 0)
+collision_mask = 2
 hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
@@ -25,6 +26,7 @@ collide_with_bodies = false
 [node name="RightRay" type="RayCast2D" parent="."]
 position = Vector2(178, 0)
 target_position = Vector2(50, 0)
+collision_mask = 2
 hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false

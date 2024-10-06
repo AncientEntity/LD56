@@ -4,14 +4,17 @@ var rng = RandomNumberGenerator.new()
 @onready var ray_left: RayCast2D = $RayLeft
 @onready var ray_right: RayCast2D = $RayRight
 
-enum ECurrentTask {
-	IDLE,
-	HARVESTING,
-	MINING,
-}
-var currentTask = ECurrentTask.IDLE
+var projectile = preload("res://Scenes/projectiles/baseprojectile.tscn")
+
+var currentTask = CEnums.ECurrentTask.FIGHTING
 var targetTaskObject = null
 var stopDistance = 10
+
+var fightSideBias = "LEFT"
+var agrodEnemies = []
+var damage = 5
+var shootDelay = 1
+var lastShotTime = 0
 
 var moveSpeed = 100.0
 var moveDirection = 0
@@ -22,17 +25,39 @@ func _ready() -> void:
 	owner = get_parent().owner
 	pass # Replace with function body.
 
+func _process(delta):
+	if agrodEnemies.size() > 0 or %GameManager.roundState == CEnums.ERoundState.Invasion:
+		currentTask = CEnums.ECurrentTask.FIGHTING
+	else:
+		currentTask = CEnums.ECurrentTask.IDLE
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	match currentTask:
-		ECurrentTask.IDLE:
+		CEnums.ECurrentTask.IDLE:
 			IdleTask(delta)
-		ECurrentTask.HARVESTING: #todo
+		CEnums.ECurrentTask.HARVESTING: #todo
 			WalkToObjective()
-		ECurrentTask.MINING: #todo
+		CEnums.ECurrentTask.MINING: #todo
 			WalkToObjective()
+		CEnums.ECurrentTask.FIGHTING:
+			Fight()
 	
+func Fight():
+	if Time.get_unix_time_from_system() - lastShotTime < shootDelay:
+		return
+	
+	if agrodEnemies.size() > 0:
+		var newProjectile = projectile.instantiate()
+		add_sibling(newProjectile)
+		newProjectile.set_position(get_position())
+		newProjectile.look_at(agrodEnemies[0].position)
+		newProjectile.damage = damage
+		
+		lastShotTime = Time.get_unix_time_from_system()
+	else:
+		var direction = -1 if fightSideBias == "LEFT" else 1
+		self.linear_velocity.x = moveSpeed * direction
 
 func WalkToObjective():
 	# todo
@@ -68,3 +93,12 @@ func IdleTask(delta : float):
 	
 	var direction = moveSpeed * moveDirection
 	self.linear_velocity.x = direction
+
+
+func _on_agro_zone_area_entered(area: Area2D) -> void:
+	if area.is_in_group("bugs"):
+		agrodEnemies.append(area.get_parent())
+
+func _on_agro_zone_area_exited(area: Area2D) -> void:
+	if area.is_in_group("bugs"):
+		agrodEnemies.erase(area.get_parent())

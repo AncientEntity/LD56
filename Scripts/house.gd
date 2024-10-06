@@ -14,6 +14,7 @@ func _ready() -> void:
 		get_tree().get_root().get_node("GameScene/WORLD").add_child(newGuy)
 		newGuy.global_position = $Sprite2D.global_position + Vector2(rng.randi_range(-100,100),0)
 		myGuys.append(newGuy)
+		newGuy.fightSideBias = "LEFT" if i % 2 == 0 else "RIGHT"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _exit_tree() -> void:
