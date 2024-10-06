@@ -5,6 +5,9 @@ extends Node
 var max_left = 2
 var max_right = 2
 
+#base cost for first grass on each side
+var grass_cut_cost = 200
+
 var house_cost = 100
 var farm_cost = 200
 var mine_cost = 300

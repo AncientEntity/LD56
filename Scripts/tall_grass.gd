@@ -6,6 +6,10 @@ extends Node2D
 var children = []
 
 var wall
+var label
+
+#temp while buttons are in use
+var buttons = []
 
 #WARNING if this is changed from 60 then the position of tall_grass needs to all be changed
 #num_of_grass_items*(tile_shop min size + grid_H_seperation) = desired_pixles is the total pixles needed for all grass items to be
@@ -19,17 +23,30 @@ func _ready() -> void:
 	var i =  0
 	for grass in self.get_children():
 		#temp if statment to exclude testing buttons from array
-		if(grass.is_class("StaticBody2D") == true):
+		if grass.is_class("StaticBody2D"):
 			wall = grass
 			print("wall is ", wall.get_name())
-		elif grass.is_class("Button") == false:
+		elif grass.is_class("Sprite2D"):
 			children.append(grass)
 			i += 1
-		
-	pass
+		elif grass.is_class("Label"):
+			label = grass
+		elif grass.is_class("Button"):
+			#temp while buttons are in use
+			buttons.append(grass)
+	if(self.get_name() == "GrassRight"):
+		label.position = Vector2(children[0].position.x - desired_pixles/12, children[0].position.y - 100)
+		update_text()
+	elif(self.get_name() == "GrassLeft"):
+		label.position = Vector2(children[5].position.x - desired_pixles/12, children[5].position.y - 100)
+		update_text()
 
 #children has an array of 6 grass objects, pops and moves the object L || R based on the right bool
 func cut_grass(right : bool):
+	if(!can_buy(right)):
+		return
+	
+	
 	var poped = children.pop_front() if right else children.pop_back()
 	
 	#READ WARNING BEFORE TOUCHING THIS
@@ -42,12 +59,35 @@ func cut_grass(right : bool):
 		wall.position.x += desired_pixles/6
 		print("pos now ",wall.position.x)
 		game_manager.max_right += 1
+		label.position.x += desired_pixles/6
+		
+		#temp while buttons are in use
+		for button in buttons:
+			button.position.x += desired_pixles/6
 	else:
 		children.insert(0, poped)
 		wall.position.x -= desired_pixles/6
 		game_manager.max_left += 1
+		label.position.x -= desired_pixles/6
+		
+		#temp while buttons are in use 
+		for button in buttons:
+			button.position.x -= desired_pixles/6
 	world_buying_grid._update_grid(right)
+	update_text()
 
+func can_buy(right : bool) -> bool:
+	if(game_manager.money >= game_manager.grass_cut_cost * ((game_manager.max_right - 1) if right else (game_manager.max_left - 1))):
+		game_manager.money -= game_manager.grass_cut_cost * ((game_manager.max_right - 1) if right else (game_manager.max_left - 1))
+		game_manager.update_lables()
+		return true
+	return false
+
+func update_text():
+	if(self.get_name() == "GrassRight"):
+		label.text = "Cut for $%d"%[game_manager.grass_cut_cost * (game_manager.max_right - 1)]
+	elif(self.get_name() == "GrassLeft"):
+		label.text = "Cut for $%d"%[game_manager.grass_cut_cost * (game_manager.max_left - 1)]
 
 #temp function while buttons are here. Call cut_grass for function
 func _on_button_pressed(right : bool):

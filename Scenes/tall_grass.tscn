@@ -10,6 +10,17 @@ position = Vector2(4.19, 0)
 scale = Vector2(1.047, 1)
 script = ExtResource("1_gvc14")
 
+[node name="Label" type="Label" parent="."]
+z_index = 100
+offset_left = 481.194
+offset_top = 15.0
+offset_right = 623.194
+offset_bottom = 97.0
+theme_override_font_sizes/font_size = 30
+text = "Cut for $100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="grass1" type="Sprite2D" parent="."]
 position = Vector2(100, 324)
 texture = ExtResource("2_bxkm1")
@@ -35,16 +46,16 @@ position = Vector2(1092.5, 324)
 texture = ExtResource("3_h4oyn")
 
 [node name="X" type="Button" parent="."]
-offset_left = 1365.0
-offset_top = 389.0
-offset_right = 1569.0
-offset_bottom = 557.0
+offset_left = 1069.0
+offset_top = 324.0
+offset_right = 1186.0
+offset_bottom = 638.0
 
 [node name="X2" type="Button" parent="."]
-offset_left = 1360.13
-offset_top = 170.0
-offset_right = 1564.13
-offset_bottom = 338.0
+offset_left = 4.59408
+offset_top = 325.0
+offset_right = 118.594
+offset_bottom = 641.0
 
 [connection signal="pressed" from="X" to="." method="_on_button_pressed" binds= [false]]
 [connection signal="pressed" from="X2" to="." method="_on_button_pressed" binds= [true]]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://o3lmx3ww3f5i"]
+
+[ext_resource type="Texture2D" uid="uid://b5fv1ncxb5iro" path="res://Assets/groundTiles/big_rock.png" id="1_pagxi"]
+
+[node name="Rock" type="Sprite2D"]
+top_level = true
+position = Vector2(76, 75)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_pagxi")
