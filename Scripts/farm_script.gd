@@ -4,6 +4,8 @@ var groth_speed = 200
 var groth = 0
 var total_frames = 3
 
+
+@onready var money_lable: Label = %money_lable
 const candy = preload("res://Scenes/candy.tscn")
 
 func _ready():
@@ -22,4 +24,5 @@ func _process(delta):
 func give_money():
 	var candy = candy.instantiate()
 	self.add_child(candy)
-	candy.position = Vector2(self.position.x - 75, self.position.y - 75)
+	candy.position = Vector2(self.position.x - 85, self.position.y + 20)
+	candy.do_move(true)

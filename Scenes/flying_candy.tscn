@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ja136fmjy0ki"]
+
+[ext_resource type="Texture2D" uid="uid://bmvxvom4pl0kr" path="res://Assets/groundTiles/candy3.png" id="1_0yapb"]
+[ext_resource type="Texture2D" uid="uid://cpbp80e7yxumo" path="res://Assets/groundTiles/candy2.png" id="2_dcrqt"]
+[ext_resource type="Texture2D" uid="uid://b1ynp7bd22tg8" path="res://Assets/groundTiles/candy1.png" id="3_ahrk4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j87wf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0yapb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dcrqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ahrk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dcrqt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Candy" type="AnimatedSprite2D"]
+position = Vector2(4, -19)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_j87wf")
+autoplay = "default"
+frame_progress = 0.0114674
