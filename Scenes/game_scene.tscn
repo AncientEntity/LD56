@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=4 uid="uid://c86371r6f6oh3"]
+[gd_scene load_steps=10 format=4 uid="uid://c86371r6f6oh3"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_gtn57"]
 [ext_resource type="PackedScene" uid="uid://c85brqjbs6xhp" path="res://Scenes/camera_2d.tscn" id="2_x5va0"]
 [ext_resource type="TileSet" uid="uid://46uh3g7vby3q" path="res://Assets/groundTiles/groundtileset.tres" id="4_5ifgc"]
 [ext_resource type="PackedScene" uid="uid://dnkr0qercn1qi" path="res://Scenes/shop_grid.tscn" id="4_hxhm7"]
-[ext_resource type="PackedScene" uid="uid://b7lnjnot2mw2x" path="res://Scenes/little_guy.tscn" id="4_xx35y"]
-[ext_resource type="PackedScene" path="res://Scenes/Pumpkin.tscn" id="6_x6mbr"]
+[ext_resource type="PackedScene" path="res://Scenes/little_guy.tscn" id="4_xx35y"]
+[ext_resource type="Script" path="res://Scripts/money_label.gd" id="5_fn7jv"]
+[ext_resource type="PackedScene" uid="uid://drhmty32g8h14" path="res://Scenes/Pumpkin.tscn" id="6_x6mbr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mxl2y"]
 
@@ -28,6 +29,15 @@ position = Vector2(3, -175)
 
 [node name="Camera2D" parent="." instance=ExtResource("2_x5va0")]
 position = Vector2(-11, -26)
+
+[node name="money_lable" type="Label" parent="Camera2D"]
+unique_name_in_owner = true
+offset_left = -559.0
+offset_top = -311.0
+offset_right = -368.0
+offset_bottom = -258.0
+text = "bills = $0"
+script = ExtResource("5_fn7jv")
 
 [node name="WORLD" type="Node" parent="."]
 

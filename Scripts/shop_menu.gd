@@ -8,14 +8,15 @@ var pos_offset = Vector2 ( 18, -7 )
 
 var has_land = false
 
-#Menu holder
+#Holders
 var popup_menu
+var cur_asset_id
 
 #Id { key : text, key : price }
 var items = {
-	1: {"text": "Buy House", "price": 100, "asset": preload("res://Scenes/buildings/house.tscn")},	
-	2: {"text": "Buy Farm", "price": 200, "asset": preload("res://Scenes/buildings/farm.tscn")},
-	3: {"text": "Buy Mine", "price": 300, "asset": preload("res://Scenes/buildings/mine.tscn")},
+	1: {"text": "Buy House", "price": 0, "asset": preload("res://Scenes/buildings/house.tscn")},	
+	2: {"text": "Buy Farm", "price": 0, "asset": preload("res://Scenes/buildings/farm.tscn")},
+	3: {"text": "Buy Mine", "price": 0, "asset": preload("res://Scenes/buildings/mine.tscn")},
 }
 
 func _ready() -> void:
@@ -35,17 +36,19 @@ func update_items():
 		for id in items.keys():
 			popup_menu.add_item("%s for %d" % [items[id]["text"], items[id]["price"]], id)
 	else:
-		popup_menu.add_item("Destroy Property +%d"%[100], 0)
+		popup_menu.add_item("Destroy Property +%d"%[game_manager.get_sell_price(cur_asset_id)], 0)
 
 # Function to handle item selection
 func on_item_selected(id):
 	
 	#check if money allows
 	if(id == 0):
+		game_manager.sell_building(cur_asset_id)
 		destroy()
 	else:
 		var item_text = self.get_popup().get_item_text(id-1)
 		var spawned_asset = items[id]["asset"].instantiate()
+		cur_asset_id = id 
 		if spawned_asset:
 			free_childen()
 			self.add_child(spawned_asset)
