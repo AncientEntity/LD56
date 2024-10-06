@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://be1ghfuelgtyl" path="res://Assets/groundTiles/tall_grass_3.png" id="3_h4oyn"]
 
 [node name="Grass" type="Node2D"]
-position = Vector2(-0.095, 0)
-scale = Vector2(0.75, 1)
+position = Vector2(4.19, 0)
+scale = Vector2(1.047, 1)
 script = ExtResource("1_gvc14")
 
 [node name="grass1" type="Sprite2D" parent="."]

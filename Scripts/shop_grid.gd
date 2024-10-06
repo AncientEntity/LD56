@@ -51,7 +51,7 @@ func _can_develop(right : bool):
 			return true
 	return false
 
-func _on_button_pressed(right : bool) -> void:
+func _on_button_pressed(right : bool):
 	_update_grid(right)
 
 func sell_building(id : int):
