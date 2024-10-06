@@ -1,11 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfc0ghnysm1yv"]
 
-[ext_resource type="Texture2D" uid="uid://blpfwpsik32ki" path="res://Assets/TempAssets/tempMine.png" id="1_1y3g5"]
 [ext_resource type="PackedScene" uid="uid://bbmokkmpfdeg6" path="res://Scenes/buildings/BaseBuilding.tscn" id="1_osiaw"]
+[ext_resource type="Texture2D" uid="uid://cctycljgfdvgw" path="res://Assets/groundTiles/mine.png" id="2_8n2ok"]
 
 [node name="BaseBuilding" instance=ExtResource("1_osiaw")]
+position = Vector2(-2.5, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 position = Vector2(96, 69)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_1y3g5")
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_8n2ok")
