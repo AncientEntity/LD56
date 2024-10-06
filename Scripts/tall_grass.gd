@@ -1,8 +1,5 @@
 extends Node2D
 
-@onready var button: Button = $Button
-@onready var button_2: Button = $Button2
-
 var children = []
 
 func _ready() -> void:
