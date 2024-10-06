@@ -1,11 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://t2ur4duvuiu5"]
+[gd_scene load_steps=7 format=3 uid="uid://t2ur4duvuiu5"]
 
-[ext_resource type="Texture2D" uid="uid://gjqcuv8bitp6" path="res://Assets/TempAssets/temp_farm.png" id="1_2uobu"]
 [ext_resource type="PackedScene" uid="uid://bbmokkmpfdeg6" path="res://Scenes/buildings/BaseBuilding.tscn" id="1_5p2mt"]
+[ext_resource type="Texture2D" uid="uid://dtavuhqm2l2oc" path="res://Assets/groundTiles/farm_seeds.png" id="2_7bdnk"]
+[ext_resource type="Texture2D" uid="uid://bvkp78av8y48b" path="res://Assets/groundTiles/farm_growing.png" id="3_0mx6e"]
+[ext_resource type="Texture2D" uid="uid://cuvwqeedhti6m" path="res://Assets/groundTiles/farm_corn.png" id="4_ga2gi"]
+[ext_resource type="Script" path="res://Scripts/farm_script.gd" id="5_p8n1d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_skean"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7bdnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0mx6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ga2gi")
+}],
+"loop": true,
+"name": &"grow_farm",
+"speed": 0.0
+}]
 
 [node name="BaseBuilding" instance=ExtResource("1_5p2mt")]
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
-position = Vector2(96, 69)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_2uobu")
+[node name="farm" type="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(95, 0)
+sprite_frames = SubResource("SpriteFrames_skean")
+animation = &"grow_farm"
+autoplay = "grow_farm"
+script = ExtResource("5_p8n1d")
