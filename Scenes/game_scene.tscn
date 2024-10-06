@@ -11,11 +11,9 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mxl2y"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uiok8"]
-size = Vector2(371.53, 15.694)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cjusw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1vsg"]
-size = Vector2(340.925, 24.1993)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_stxop"]
 
 [node name="GameScene" type="Node2D"]
 
@@ -61,7 +59,7 @@ scale = Vector2(0.95511, 1)
 position = Vector2(-4.02502, -211)
 rotation = -1.5708
 scale = Vector2(1.405, 1.405)
-shape = SubResource("RectangleShape2D_uiok8")
+shape = SubResource("WorldBoundaryShape2D_cjusw")
 one_way_collision = true
 
 [node name="TestingRect" type="ColorRect" parent="WORLD/GrassRight/RightWall/CollisionShape2D"]
@@ -80,10 +78,10 @@ position = Vector2(1178.61, 595)
 scale = Vector2(0.95511, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WORLD/GrassLeft/LeftWall"]
-position = Vector2(-28, -203.5)
+position = Vector2(7, -203)
 rotation = 1.5708
 scale = Vector2(1.405, 1.405)
-shape = SubResource("RectangleShape2D_m1vsg")
+shape = SubResource("WorldBoundaryShape2D_stxop")
 one_way_collision = true
 
 [node name="TestingRect" type="ColorRect" parent="WORLD/GrassLeft/LeftWall/CollisionShape2D"]
