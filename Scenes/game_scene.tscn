@@ -1,13 +1,13 @@
-[gd_scene load_steps=12 format=4 uid="uid://c86371r6f6oh3"]
+[gd_scene load_steps=12 format=4 uid="uid://cvyo2haycvpii"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_gtn57"]
 [ext_resource type="PackedScene" uid="uid://c85brqjbs6xhp" path="res://Scenes/camera_2d.tscn" id="2_x5va0"]
 [ext_resource type="TileSet" uid="uid://46uh3g7vby3q" path="res://Assets/groundTiles/groundtileset.tres" id="4_5ifgc"]
 [ext_resource type="PackedScene" uid="uid://dnkr0qercn1qi" path="res://Scenes/shop_grid.tscn" id="4_hxhm7"]
-[ext_resource type="PackedScene" path="res://Scenes/little_guy.tscn" id="4_xx35y"]
+[ext_resource type="PackedScene" uid="uid://b7lnjnot2mw2x" path="res://Scenes/little_guy.tscn" id="4_xx35y"]
 [ext_resource type="Script" path="res://Scripts/money_label.gd" id="5_fn7jv"]
 [ext_resource type="PackedScene" uid="uid://drhmty32g8h14" path="res://Scenes/Pumpkin.tscn" id="6_x6mbr"]
-[ext_resource type="PackedScene" uid="uid://dxnvqbog5sne3" path="res://Scenes/tall_grass.tscn" id="8_xhr1o"]
+[ext_resource type="PackedScene" path="res://Scenes/tall_grass.tscn" id="8_xhr1o"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mxl2y"]
 
