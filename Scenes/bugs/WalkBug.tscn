@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://druqr3814bht6"]
+
+[ext_resource type="PackedScene" uid="uid://du1ldsprq36pn" path="res://Scenes/bugs/BaseBug.tscn" id="1_unmhu"]
+[ext_resource type="Texture2D" uid="uid://b24w73b05jtam" path="res://Assets/walk/temp_base.png" id="2_h3mox"]
+[ext_resource type="Script" path="res://Scripts/bugs/walkbug.gd" id="2_sagtk"]
+
+[node name="BaseBug" instance=ExtResource("1_unmhu")]
+script = ExtResource("2_sagtk")
+
+[node name="WalkBug" type="Sprite2D" parent="." index="0"]
+z_index = 10
+scale = Vector2(0.204333, 0.204333)
+texture = ExtResource("2_h3mox")
+offset = Vector2(-1000, 0)
+
+[node name="LeftRay" parent="." index="2"]
+position = Vector2(-176, 0)

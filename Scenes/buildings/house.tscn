@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bbmokkmpfdeg6" path="res://Scenes/buildings/BaseBuilding.tscn" id="1_o88g4"]
 [ext_resource type="Script" path="res://Scripts/house.gd" id="2_jjkm7"]
-[ext_resource type="Texture2D" uid="uid://b2i2di2741vbf" path="res://Assets/groundTiles/hut.png" id="3_ipr4x"]
+[ext_resource type="Texture2D" uid="uid://che7ncsoqfi4e" path="res://Assets/groundTiles/hut.png" id="3_ipr4x"]
 
 [node name="BaseBuilding" instance=ExtResource("1_o88g4")]
 script = ExtResource("2_jjkm7")
