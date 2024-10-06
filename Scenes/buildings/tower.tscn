@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://r5pwxfyn4vt0"]
+
+[ext_resource type="PackedScene" uid="uid://bbmokkmpfdeg6" path="res://Scenes/buildings/BaseBuilding.tscn" id="1_b1gqn"]
+[ext_resource type="Texture2D" uid="uid://cbxxo6xfnlwht" path="res://Assets/TempAssets/tempTower.png" id="2_mkyqd"]
+
+[node name="BaseBuilding" instance=ExtResource("1_b1gqn")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+position = Vector2(96, 82)
+scale = Vector2(0.288546, 0.288546)
+texture = ExtResource("2_mkyqd")
