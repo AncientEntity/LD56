@@ -26,6 +26,7 @@ animations = [{
 
 [node name="Candy" type="AnimatedSprite2D"]
 position = Vector2(4, -19)
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_j87wf")
 autoplay = "default"
-frame_progress = 0.224717
+frame_progress = 0.738424

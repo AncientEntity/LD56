@@ -29,5 +29,17 @@ hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
 
+[node name="HealthBar" type="ColorRect" parent="."]
+z_index = 1200
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.0
+offset_top = -151.0
+offset_right = 95.0
+offset_bottom = -141.0
+grow_horizontal = 2
+color = Color(0.705939, 3.53761e-06, 3.85046e-07, 1)
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
