@@ -35,10 +35,10 @@ func _ready() -> void:
 			#temp while buttons are in use
 			buttons.append(grass)
 	if(self.get_name() == "GrassRight"):
-		label.position = Vector2(children[0].position.x - desired_pixles/12, children[0].position.y - 100)
+		label.position = Vector2(children[0].position.x - desired_pixles/12, children[0].position.y - 60)
 		update_text()
 	elif(self.get_name() == "GrassLeft"):
-		label.position = Vector2(children[5].position.x - desired_pixles/12, children[5].position.y - 100)
+		label.position = Vector2(children[5].position.x - desired_pixles/12, children[5].position.y - 60)
 		update_text()
 
 #children has an array of 6 grass objects, pops and moves the object L || R based on the right bool

@@ -1,9 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxnvqbog5sne3"]
+[gd_scene load_steps=16 format=3 uid="uid://dxnvqbog5sne3"]
 
 [ext_resource type="Texture2D" uid="uid://dia7nlh3l01qq" path="res://Assets/groundTiles/tall_grass_1.png" id="1_ee5lo"]
 [ext_resource type="Script" path="res://Scripts/tall_grass.gd" id="1_gvc14"]
 [ext_resource type="Texture2D" uid="uid://de83jasluexep" path="res://Assets/groundTiles/tall_grass_2.png" id="2_bxkm1"]
 [ext_resource type="Texture2D" uid="uid://be1ghfuelgtyl" path="res://Assets/groundTiles/tall_grass_3.png" id="3_h4oyn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nk11q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88h8r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mieq6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gx6lf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2qk2u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_khxww"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wxrws"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tdvpb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_djitg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ge65b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1puiv"]
 
 [node name="Grass" type="Node2D"]
 position = Vector2(4.19, 0)
@@ -45,17 +67,39 @@ texture = ExtResource("1_ee5lo")
 position = Vector2(1092.5, 324)
 texture = ExtResource("3_h4oyn")
 
-[node name="X" type="Button" parent="."]
-offset_left = 1069.0
-offset_top = 324.0
+[node name="BuyRight" type="Button" parent="."]
+offset_left = 923.0
+offset_top = 94.0
 offset_right = 1186.0
 offset_bottom = 638.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nk11q")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_88h8r")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_mieq6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_gx6lf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_2qk2u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_khxww")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wxrws")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tdvpb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_djitg")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ge65b")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1puiv")
 
-[node name="X2" type="Button" parent="."]
-offset_left = 4.59408
-offset_top = 325.0
-offset_right = 118.594
+[node name="BuyLeft" type="Button" parent="."]
+offset_left = 5.0
+offset_top = 90.0
+offset_right = 243.0
 offset_bottom = 641.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nk11q")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_88h8r")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_mieq6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_gx6lf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_2qk2u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_khxww")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wxrws")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tdvpb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_djitg")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ge65b")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1puiv")
 
-[connection signal="pressed" from="X" to="." method="_on_button_pressed" binds= [false]]
-[connection signal="pressed" from="X2" to="." method="_on_button_pressed" binds= [true]]
+[connection signal="pressed" from="BuyRight" to="." method="_on_button_pressed" binds= [false]]
+[connection signal="pressed" from="BuyLeft" to="." method="_on_button_pressed" binds= [true]]

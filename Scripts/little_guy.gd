@@ -1,6 +1,8 @@
 extends PhysicsBody2D
 
 var rng = RandomNumberGenerator.new()
+@onready var ray_left: RayCast2D = $RayLeft
+@onready var ray_right: RayCast2D = $RayRight
 
 enum ECurrentTask {
 	IDLE,
@@ -38,14 +40,16 @@ func WalkToObjective():
 
 func WanderDirection():
 	var xBounds = [%LeftWall.get_position().x,%RightWall.get_position().x]
-	if abs(get_position().x-xBounds[0]) < stopDistance*8:
-		moveDirection = 1
-		lastDirectionChangeTime = Time.get_unix_time_from_system() - rng.randi_range(-8,0)
-		return
-	elif abs(get_position().x-xBounds[1]) < stopDistance*8:
-		moveDirection = -1
-		lastDirectionChangeTime = Time.get_unix_time_from_system() - rng.randi_range(-8,0)
-		return
+	if ray_left.is_colliding():
+		if(ray_left.get_collider().get_name() == "LeftWall"):
+			moveDirection = 1
+			lastDirectionChangeTime = Time.get_unix_time_from_system() - rng.randi_range(-8,0)
+			return
+	elif ray_right.is_colliding():
+		if(ray_right.get_collider().get_name() == "RightWall"):
+			moveDirection = -1
+			lastDirectionChangeTime = Time.get_unix_time_from_system() - rng.randi_range(-8,0)
+			return
 
 	if Time.get_unix_time_from_system() - lastDirectionChangeTime < 0 and moveDirection != 0:
 		return

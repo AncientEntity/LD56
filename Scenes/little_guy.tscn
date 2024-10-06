@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7lnjnot2mw2x"]
+[gd_scene load_steps=9 format=3 uid="uid://cwswjklof8mas"]
 
 [ext_resource type="Script" path="res://Scripts/little_guy.gd" id="1_qbqcl"]
-[ext_resource type="Texture2D" uid="uid://clnv3mutvl8n4" path="res://Assets/littleGuyAssets/Body2.png" id="2_ftvnn"]
-[ext_resource type="Texture2D" uid="uid://dpanh6ya3dcp7" path="res://Assets/littleGuyAssets/Body3.png" id="3_0gklo"]
-[ext_resource type="Texture2D" uid="uid://0nfutyhdatl5" path="res://Assets/littleGuyAssets/Body4.png" id="4_e0o5y"]
-[ext_resource type="Texture2D" uid="uid://ck3t0hnoxw6ln" path="res://Assets/littleGuyAssets/Body1.png" id="5_8qdn0"]
-[ext_resource type="Texture2D" uid="uid://bu8g66msvdpds" path="res://Assets/littleGuyAssets/Eyeball.png" id="6_qc125"]
+[ext_resource type="Texture2D" uid="uid://ckcfivpbkhiom" path="res://Assets/littleGuyAssets/Body2.png" id="2_ftvnn"]
+[ext_resource type="Texture2D" uid="uid://dipcaj3ylv0db" path="res://Assets/littleGuyAssets/Body3.png" id="3_0gklo"]
+[ext_resource type="Texture2D" uid="uid://8i5w1ynj01co" path="res://Assets/littleGuyAssets/Body4.png" id="4_e0o5y"]
+[ext_resource type="Texture2D" uid="uid://b4jtqxebwbdda" path="res://Assets/littleGuyAssets/Body1.png" id="5_8qdn0"]
+[ext_resource type="Texture2D" uid="uid://vfuv5m5uusmi" path="res://Assets/littleGuyAssets/Eyeball.png" id="6_qc125"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ho3do"]
 radius = 21.17
@@ -63,3 +63,11 @@ z_index = 50
 position = Vector2(35, 15)
 scale = Vector2(0.995, 0.995)
 texture = ExtResource("6_qc125")
+
+[node name="RayLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -5)
+target_position = Vector2(-27, 1)
+
+[node name="RayRight" type="RayCast2D" parent="."]
+position = Vector2(0, -5)
+target_position = Vector2(27, 0)
