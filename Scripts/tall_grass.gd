@@ -55,9 +55,7 @@ func cut_grass(right : bool):
 	
 	if(right):
 		children.insert(5, poped)
-		print("pos was ",wall.position.x)
 		wall.position.x += desired_pixles/6
-		print("pos now ",wall.position.x)
 		game_manager.max_right += 1
 		label.position.x += desired_pixles/6
 		

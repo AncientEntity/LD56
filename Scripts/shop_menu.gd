@@ -7,6 +7,7 @@ const DASHED_SHOP = preload("res://Assets/TempAssets/DashedShop.png")
 var pos_offset = Vector2 ( 18, -7 )
 
 var has_land = false
+var spawned_rock = false
 
 #Holders
 var popup_menu
@@ -36,7 +37,11 @@ func update_items():
 		items[4]["price"] = game_manager.get_prices(4, false)
 		#Update all items text
 		for id in items.keys():
-			popup_menu.add_item("%s for -$%d" % [items[id]["text"], items[id]["price"]], id)
+			if(id == 3 && spawned_rock):
+				#checking mines logic
+				popup_menu.add_item("%s for -$%d" % [items[id]["text"], items[id]["price"]], id)
+			elif(id != 3):
+				popup_menu.add_item("%s for -$%d" % [items[id]["text"], items[id]["price"]], id)
 	else:
 		popup_menu.add_item("Destroy +$%d"%[game_manager.get_prices(cur_asset_id, true)], 0)
 
@@ -76,7 +81,8 @@ func destroy():
 
 func free_childen():
 	for child in self.get_children():
-		child.queue_free()
+		if(child.get_name() != "Rock"):
+			child.queue_free()
 
 func _on_mouse_entered() -> void:
 	self.modulate = Color("ffffff")

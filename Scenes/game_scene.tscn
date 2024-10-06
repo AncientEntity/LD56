@@ -62,6 +62,12 @@ scale = Vector2(1.405, 1.405)
 shape = SubResource("WorldBoundaryShape2D_re4sx")
 one_way_collision = true
 
+[node name="ColorRect" type="ColorRect" parent="WORLD/GrassRight/RightWall/CollisionShape2D"]
+offset_left = -125.0
+offset_top = -1.0
+offset_right = 113.0
+offset_bottom = 8.0
+
 [node name="GrassLeft" parent="WORLD" instance=ExtResource("8_xhr1o")]
 position = Vector2(-1851, -578)
 
@@ -76,6 +82,11 @@ rotation = 1.5708
 scale = Vector2(1.405, 1.405)
 shape = SubResource("WorldBoundaryShape2D_rilrv")
 one_way_collision = true
+
+[node name="ColorRect" type="ColorRect" parent="WORLD/GrassLeft/LeftWall/CollisionShape2D"]
+offset_left = -113.0
+offset_right = 40.0
+offset_bottom = 14.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="WORLD"]
 z_index = 150
