@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://du1ldsprq36pn"]
+
+[ext_resource type="Script" path="res://Scripts/bugs/base_bug.gd" id="1_insh4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ee87x"]
+size = Vector2(347, 262)
+
+[node name="BaseBug" type="Node2D"]
+script = ExtResource("1_insh4")
+
+[node name="Area2D" type="Area2D" parent="." groups=["bugs"]]
+position = Vector2(165, 102)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-163, -101)
+shape = SubResource("RectangleShape2D_ee87x")
+
+[node name="LeftRay" type="RayCast2D" parent="."]
+position = Vector2(-173, 0)
+target_position = Vector2(-50, 0)
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RightRay" type="RayCast2D" parent="."]
+position = Vector2(178, 0)
+target_position = Vector2(50, 0)
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
