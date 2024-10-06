@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cctycljgfdvgw" path="res://Assets/groundTiles/mine.png" id="2_8n2ok"]
 
 [node name="BaseBuilding" instance=ExtResource("1_osiaw")]
-position = Vector2(-2.5, 0)
+position = Vector2(-2.5, -1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 position = Vector2(96, 69)
