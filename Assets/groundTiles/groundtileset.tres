@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=9 format=3 uid="uid://46uh3g7vby3q"]
 
-[ext_resource type="Texture2D" uid="uid://bgc45113s52b6" path="res://Assets/groundTiles/grass1.png" id="1_yogmd"]
-[ext_resource type="Texture2D" uid="uid://ccva3ldoadvk7" path="res://Assets/groundTiles/grass2.png" id="2_6cm66"]
-[ext_resource type="Texture2D" uid="uid://cfm31uiq06wje" path="res://Assets/groundTiles/ground.png" id="3_x20qd"]
-[ext_resource type="Texture2D" uid="uid://bplw8tcyxjb6x" path="res://Assets/groundTiles/stone.png" id="4_ejtf7"]
+[ext_resource type="Texture2D" uid="uid://bvtmxp3s62vgg" path="res://Assets/groundTiles/grass1.png" id="1_yogmd"]
+[ext_resource type="Texture2D" uid="uid://ci6ny8esxqu6l" path="res://Assets/groundTiles/grass2.png" id="2_6cm66"]
+[ext_resource type="Texture2D" uid="uid://b0iofbopbak46" path="res://Assets/groundTiles/ground.png" id="3_x20qd"]
+[ext_resource type="Texture2D" uid="uid://0koxw4gi3xie" path="res://Assets/groundTiles/stone.png" id="4_ejtf7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ose1"]
 texture = ExtResource("4_ejtf7")
