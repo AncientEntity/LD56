@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://c86371r6f6oh3"]
+[gd_scene load_steps=9 format=4 uid="uid://c86371r6f6oh3"]
 
 [ext_resource type="Script" path="res://Scripts/gameManager.gd" id="1_gtn57"]
 [ext_resource type="PackedScene" uid="uid://c85brqjbs6xhp" path="res://Scenes/camera_2d.tscn" id="2_x5va0"]
 [ext_resource type="TileSet" uid="uid://46uh3g7vby3q" path="res://Assets/groundTiles/groundtileset.tres" id="4_5ifgc"]
 [ext_resource type="PackedScene" uid="uid://dnkr0qercn1qi" path="res://Scenes/shop_grid.tscn" id="4_hxhm7"]
 [ext_resource type="PackedScene" path="res://Scenes/little_guy.tscn" id="4_xx35y"]
+[ext_resource type="PackedScene" uid="uid://drhmty32g8h14" path="res://Scenes/Pumpkin.tscn" id="6_x6mbr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mxl2y"]
 
@@ -13,6 +14,10 @@ size = Vector2(20, 344.484)
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_gtn57")
+
+[node name="Pumpkin" parent="." instance=ExtResource("6_x6mbr")]
+z_index = -1
+position = Vector2(3, -175)
 
 [node name="Camera2D" parent="." instance=ExtResource("2_x5va0")]
 position = Vector2(-11, -26)

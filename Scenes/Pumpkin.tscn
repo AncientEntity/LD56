@@ -1,0 +1,184 @@
+[gd_scene load_steps=9 format=3 uid="uid://drhmty32g8h14"]
+
+[ext_resource type="Texture2D" uid="uid://cm34736khiacn" path="res://Assets/groundTiles/Pumpkin.png" id="1_hauf0"]
+[ext_resource type="Texture2D" uid="uid://rm6xofcxhjsw" path="res://Assets/candleAssets/candle.png" id="2_qdwyv"]
+[ext_resource type="Texture2D" uid="uid://dpnvoptnhhj5y" path="res://Assets/candleAssets/flame2.png" id="3_11p3p"]
+[ext_resource type="Texture2D" uid="uid://cksm1ekr5nj46" path="res://Assets/candleAssets/flame1.png" id="4_dua28"]
+[ext_resource type="Texture2D" uid="uid://dsbalgvfl6yso" path="res://Assets/candleAssets/flame3.png" id="5_g202a"]
+[ext_resource type="Texture2D" uid="uid://bbarablqt6ju4" path="res://Assets/candleAssets/flame4.png" id="6_6lmxt"]
+[ext_resource type="Texture2D" uid="uid://b3ieqfse4cqy3" path="res://Assets/candleAssets/flame5.png" id="7_kwnbq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tfydl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_11p3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dua28")
+}, {
+"duration": 5.0,
+"texture": ExtResource("5_g202a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6lmxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kwnbq")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_6lmxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_11p3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dua28")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_g202a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6lmxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kwnbq")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_6lmxt")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_g202a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kwnbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g202a")
+}],
+"loop": true,
+"name": &"fire1",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_11p3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dua28")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_g202a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6lmxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kwnbq")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_6lmxt")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_g202a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kwnbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g202a")
+}],
+"loop": true,
+"name": &"fire2",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 5.0,
+"texture": ExtResource("5_g202a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6lmxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kwnbq")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_6lmxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_11p3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dua28")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_g202a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6lmxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kwnbq")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_6lmxt")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_g202a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kwnbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g202a")
+}],
+"loop": true,
+"name": &"fire3",
+"speed": 17.0
+}]
+
+[node name="Pumpkin" type="Sprite2D"]
+position = Vector2(-7.62939e-06, 2)
+scale = Vector2(0.532407, 0.532407)
+texture = ExtResource("1_hauf0")
+
+[node name="Candle" type="Sprite2D" parent="."]
+position = Vector2(-90.6667, 290.222)
+scale = Vector2(1.1358, 1.3251)
+texture = ExtResource("2_qdwyv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Candle"]
+position = Vector2(1, -8)
+sprite_frames = SubResource("SpriteFrames_tfydl")
+animation = &"fire2"
+autoplay = "fire1"
+
+[node name="Candle2" type="Sprite2D" parent="."]
+position = Vector2(0, 290.222)
+scale = Vector2(1.1358, 1.3251)
+texture = ExtResource("2_qdwyv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Candle2"]
+position = Vector2(1, -8)
+sprite_frames = SubResource("SpriteFrames_tfydl")
+animation = &"fire2"
+autoplay = "fire2"
+
+[node name="Candle3" type="Sprite2D" parent="."]
+position = Vector2(90, 290.222)
+scale = Vector2(1.1358, 1.3251)
+texture = ExtResource("2_qdwyv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Candle3"]
+position = Vector2(1, -8)
+sprite_frames = SubResource("SpriteFrames_tfydl")
+animation = &"fire3"
+autoplay = "fire3"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -346.667
+offset_top = -77.3333
+offset_right = 344.333
+offset_bottom = 430.667
+color = Color(0.197744, 0.0836477, 0, 1)

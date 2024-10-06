@@ -1,24 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://5oos01fy60ou"]
+[gd_scene load_steps=3 format=3 uid="uid://5oos01fy60ou"]
 
 [ext_resource type="Texture2D" uid="uid://qsbn5hsx1ae1" path="res://Assets/TempAssets/DashedShop.png" id="1_s8lq4"]
 [ext_resource type="Script" path="res://Scripts/shop_menu.gd" id="2_edrwi"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ppcec"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5gftr"]
-texture = ExtResource("1_s8lq4")
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uu3pj"]
-
 [node name="tile_shop" type="MenuButton"]
+z_index = 5
 custom_minimum_size = Vector2(150, 150)
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ppcec")
-theme_override_styles/hover = SubResource("StyleBoxTexture_5gftr")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_uu3pj")
+offset_right = 150.0
+offset_bottom = 150.0
 icon = ExtResource("1_s8lq4")
 expand_icon = true
 script = ExtResource("2_edrwi")

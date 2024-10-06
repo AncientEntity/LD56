@@ -15,7 +15,16 @@ var grids = {
 func _ready() -> void:	
 	grids[1]["max"] = game_scene.max_right
 	grids[2]["max"] = game_scene.max_left
-	pass
+	
+	#pre-loads max grid right away 
+	while _can_develop(true):
+		grids[1]["placed"] += 1
+		var tile_asset = tile_shop_asset.instantiate()
+		self.grid_right.add_child(tile_asset)
+	while _can_develop(false):
+		grids[2]["placed"] += 1
+		var tile_asset = tile_shop_asset.instantiate()
+		self.grid_left.add_child(tile_asset)
 
 func _update_grid(right: bool):
 	grids[1]["max"] = game_scene.max_right
@@ -34,9 +43,11 @@ func _update_grid(right: bool):
 func _can_develop(right : bool):
 	if(grids[1]["max"] >= grids[1]["placed"]+1 && right):
 		if(grids[1]["max"] >= grids[1]["placed"]+1):
+			print("adding right")
 			return true
 	elif(!right):
 		if(grids[2]["max"] >= grids[2]["placed"]+1):
+			print("adding left")
 			return true
 	return false
 
