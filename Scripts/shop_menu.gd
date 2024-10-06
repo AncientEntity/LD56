@@ -30,14 +30,15 @@ func update_items():
 	get_popup().clear()
 	
 	if !has_land:
-		items[1]["price"] = game_manager.get_prices(1)
-		items[2]["price"] = game_manager.get_prices(2)
-		items[3]["price"] = game_manager.get_prices(3)
+		items[1]["price"] = game_manager.get_prices(1, false)
+		items[2]["price"] = game_manager.get_prices(2, false)
+		items[3]["price"] = game_manager.get_prices(3, false)
+		items[4]["price"] = game_manager.get_prices(4, false)
 		#Update all items text
 		for id in items.keys():
-			popup_menu.add_item("%s for %d" % [items[id]["text"], items[id]["price"]], id)
+			popup_menu.add_item("%s for -$%d" % [items[id]["text"], items[id]["price"]], id)
 	else:
-		popup_menu.add_item("Destroy Property +%d"%[game_manager.get_sell_price(cur_asset_id)], 0)
+		popup_menu.add_item("Destroy +$%d"%[game_manager.get_prices(cur_asset_id, true)], 0)
 
 # Function to handle item selection
 func on_item_selected(id):
@@ -47,10 +48,12 @@ func on_item_selected(id):
 		game_manager.sell_building(cur_asset_id)
 		destroy()
 	else:
-		var item_text = self.get_popup().get_item_text(id-1)
+		#var item_text = self.get_popup().get_item_text(id-1)
 		var spawned_asset = items[id]["asset"].instantiate()
 		cur_asset_id = id 
-		if spawned_asset:
+		if spawned_asset && items[id]["price"] <= game_manager.get_prices(0,false):
+			game_manager.sell_building(-1*cur_asset_id)
+			
 			free_childen()
 			self.add_child(spawned_asset)
 			spawned_asset.position =  spawned_asset.position - pos_offset
@@ -59,6 +62,10 @@ func on_item_selected(id):
 			self.modulate = Color("ffffff")
 			self.icon = null
 			has_land = true
+		else:
+			print("Invalid Money")
+			spawned_asset.queue_free()
+		
 
 func destroy():
 	free_childen()

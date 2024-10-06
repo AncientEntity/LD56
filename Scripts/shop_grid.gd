@@ -57,31 +57,39 @@ func _on_button_pressed(right : bool) -> void:
 
 
 func sell_building(id : int):
-	match id:
+	match abs(id):
 		1:
-			game_manager.money += game_manager.house_cost_sell
+			game_manager.money += game_manager.house_cost/(2 if id > 0 else -1)
 		2:
-			game_manager.money += game_manager.farm_cost_sell
+			game_manager.money += game_manager.farm_cost/(2 if id > 0 else -1)
 		3:
-			game_manager.money += game_manager.mine_cost_sell
+			game_manager.money += game_manager.mine_cost/(2 if id > 0 else -1)
+		4:
+			game_manager.money += game_manager.tower_cost/(2 if id > 0 else -1)
 	game_manager.update_lables()
 
-func get_sell_price(id : int) -> int:
+#func buy_building(id : int):
+	#match id:
+		#1:
+			#game_manager.money -= game_manager.house_cost
+		#2:
+			#game_manager.money -= game_manager.farm_cost
+		#3:
+			#game_manager.money -= game_manager.mine_cost
+		#4:
+			#game_manager.money -= game_manager.tower_cost
+	#game_manager.update_lables()
+
+func get_prices(id : int, sell : bool) -> int:
 	match id:
+		0:
+			return game_manager.money
 		1:
-			return game_manager.house_cost_sell
+			return game_manager.house_cost / (2 if sell else 1)
 		2:
-			return game_manager.farm_cost_sell
+			return game_manager.farm_cost / (2 if sell else 1)
 		3:
-			return game_manager.mine_cost_sell
-	return 0
-	
-func get_prices(id : int) -> int:
-	match id:
-		1:
-			return game_manager.house_cost
-		2:
-			return game_manager.farm_cost
-		3:
-			return game_manager.mine_cost
+			return game_manager.mine_cost / (3 if sell else 1)
+		4:
+			return game_manager.tower_cost / (2 if sell else 1)
 	return 0
