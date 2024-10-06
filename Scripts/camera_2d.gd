@@ -12,9 +12,10 @@ var baseResolution = [1152,648]
 func _process(delta: float) -> void:
 	var mouse_position = get_viewport().get_mouse_position()
 	var mouseXPercent = mouse_position.x / get_window().content_scale_size.x
-	if mouseXPercent <= screen_delta:
+	
+	if mouseXPercent <= screen_delta and mouseXPercent > 0:
 		position.x -= moveSpeed * delta * (1 - mouseXPercent/screen_delta)
-	elif 1.0 - mouseXPercent <= screen_delta:
+	elif 1.0 - mouseXPercent <= screen_delta and mouseXPercent < 1:
 		position.x += moveSpeed * delta * (1 - (1 - mouseXPercent)/screen_delta)
 			
 	if Input.is_action_just_pressed("toggleFullscreen"):

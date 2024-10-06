@@ -17,6 +17,7 @@ var lastDirectionChangeTime = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	owner = get_parent().owner
 	pass # Replace with function body.
 
 
@@ -36,7 +37,6 @@ func WalkToObjective():
 	var distanceToTarget = self.get_position().distance_to(targetTaskObject.get_position())
 
 func WanderDirection():
-	
 	var xBounds = [%LeftWall.get_position().x,%RightWall.get_position().x]
 	if abs(get_position().x-xBounds[0]) < stopDistance*8:
 		moveDirection = 1
