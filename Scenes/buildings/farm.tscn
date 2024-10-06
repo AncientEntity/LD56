@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://t2ur4duvuiu5"]
+
+[ext_resource type="Texture2D" uid="uid://gjqcuv8bitp6" path="res://Assets/TempAssets/temp_farm.png" id="1_2uobu"]
+[ext_resource type="PackedScene" uid="uid://bbmokkmpfdeg6" path="res://Scenes/buildings/BaseBuilding.tscn" id="1_5p2mt"]
+
+[node name="BaseBuilding" instance=ExtResource("1_5p2mt")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+position = Vector2(96, 69)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_2uobu")

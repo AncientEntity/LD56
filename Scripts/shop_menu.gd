@@ -1,7 +1,6 @@
 extends MenuButton
 
 var asset_size = 0.35
-var asset_scale = Vector2(asset_size, asset_size) 
 var pos_offset = Vector2 ( 18, -7 )
 
 #Menu holder
@@ -9,9 +8,9 @@ var popup_menu
 
 #Id { key : text, key : price }
 var items = {
-	1: {"text": "Buy House", "price": 100, "asset": preload("res://Scenes/house.tscn")},	
-	2: {"text": "Buy Farm", "price": 200, "asset": preload("res://Scenes/farm.tscn")},
-	3: {"text": "Buy Mine", "price": 300, "asset": preload("res://Scenes/mine.tscn")},
+	1: {"text": "Buy House", "price": 100, "asset": preload("res://Scenes/buildings/house.tscn")},	
+	2: {"text": "Buy Farm", "price": 200, "asset": preload("res://Scenes/buildings/farm.tscn")},
+	3: {"text": "Buy Mine", "price": 300, "asset": preload("res://Scenes/buildings/mine.tscn")},
 }
 
 func _ready() -> void:
@@ -46,7 +45,6 @@ func on_item_selected(id):
 		free_childen()
 		self.add_child(spawned_asset)
 		spawned_asset.position =  spawned_asset.position - pos_offset
-		spawned_asset.scale = asset_scale
 	update_items()
 
 

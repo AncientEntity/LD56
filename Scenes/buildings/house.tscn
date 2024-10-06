@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://fvm5vcphg73t"]
+
+[ext_resource type="PackedScene" uid="uid://bbmokkmpfdeg6" path="res://Scenes/buildings/BaseBuilding.tscn" id="1_o88g4"]
+[ext_resource type="Script" path="res://Scripts/house.gd" id="2_jjkm7"]
+[ext_resource type="Texture2D" uid="uid://cfof6svw87mtm" path="res://Assets/TempAssets/tempHouse.png" id="3_wncwf"]
+
+[node name="BaseBuilding" instance=ExtResource("1_o88g4")]
+script = ExtResource("2_jjkm7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+position = Vector2(96, 69)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_wncwf")

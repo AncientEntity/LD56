@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbmokkmpfdeg6"]
+
+[ext_resource type="Script" path="res://Scripts/building.gd" id="1_61xr7"]
+
+[node name="BaseBuilding" type="Sprite2D"]
+script = ExtResource("1_61xr7")

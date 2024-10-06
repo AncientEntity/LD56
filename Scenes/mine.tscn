@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cws4i3ihpww1"]
-
-[ext_resource type="Texture2D" uid="uid://blpfwpsik32ki" path="res://Assets/TempAssets/tempMine.png" id="1_w3p1j"]
-
-[node name="mine" type="Sprite2D"]
-position = Vector2(97, 68)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_w3p1j")
