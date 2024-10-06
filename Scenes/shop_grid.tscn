@@ -38,6 +38,8 @@ columns = 1024
 
 [node name="tile_shop2" parent="GridLeft" instance=ExtResource("2_ca2bs")]
 layout_mode = 2
+tooltip_text = "
+"
 
 [node name="RightButton" type="Button" parent="."]
 custom_minimum_size = Vector2(50, 50)

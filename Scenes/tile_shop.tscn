@@ -11,7 +11,9 @@ custom_minimum_size = Vector2(150, 150)
 offset_right = 150.0
 offset_bottom = 150.0
 icon = ExtResource("1_s8lq4")
+alignment = 0
 expand_icon = true
+text_direction = 1
 script = ExtResource("2_edrwi")
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]

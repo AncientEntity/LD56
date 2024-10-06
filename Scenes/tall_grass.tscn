@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxnvqbog5sne3"]
+
+[ext_resource type="Texture2D" uid="uid://dia7nlh3l01qq" path="res://Assets/groundTiles/tall_grass_1.png" id="1_ee5lo"]
+[ext_resource type="Script" path="res://Scripts/tall_grass.gd" id="1_gvc14"]
+[ext_resource type="Texture2D" uid="uid://de83jasluexep" path="res://Assets/groundTiles/tall_grass_2.png" id="2_bxkm1"]
+[ext_resource type="Texture2D" uid="uid://be1ghfuelgtyl" path="res://Assets/groundTiles/tall_grass_3.png" id="3_h4oyn"]
+
+[node name="Grass" type="Node2D"]
+position = Vector2(-0.095, 0)
+scale = Vector2(0.75, 1)
+script = ExtResource("1_gvc14")
+
+[node name="grass1" type="Sprite2D" parent="."]
+position = Vector2(100, 324)
+texture = ExtResource("2_bxkm1")
+
+[node name="grass2" type="Sprite2D" parent="."]
+position = Vector2(292.5, 324)
+texture = ExtResource("1_ee5lo")
+
+[node name="grass3" type="Sprite2D" parent="."]
+position = Vector2(492.5, 324)
+texture = ExtResource("3_h4oyn")
+
+[node name="grass4" type="Sprite2D" parent="."]
+position = Vector2(692.5, 324)
+texture = ExtResource("2_bxkm1")
+
+[node name="grass5" type="Sprite2D" parent="."]
+position = Vector2(892.5, 324)
+texture = ExtResource("1_ee5lo")
+
+[node name="grass6" type="Sprite2D" parent="."]
+position = Vector2(1092.5, 324)
+texture = ExtResource("3_h4oyn")
+
+[node name="X" type="Button" parent="."]
+offset_left = 1365.0
+offset_top = 389.0
+offset_right = 1569.0
+offset_bottom = 557.0
+
+[node name="X2" type="Button" parent="."]
+offset_left = 1360.13
+offset_top = 170.0
+offset_right = 1564.13
+offset_bottom = 338.0
+
+[connection signal="pressed" from="X" to="." method="_on_button_pressed" binds= [false]]
+[connection signal="pressed" from="X2" to="." method="_on_button_pressed" binds= [true]]
