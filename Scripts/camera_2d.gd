@@ -22,8 +22,6 @@ var baseResolution = [1152,648]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	max_left = -1*game_manager.max_left * desired_pixles - max_offset
-	max_right = game_manager.max_right * desired_pixles + max_offset
 	var mouse_position = get_viewport().get_mouse_position()
 	var mouseXPercent = mouse_position.x / get_window().content_scale_size.x
 	
@@ -39,3 +37,7 @@ func _process(delta: float) -> void:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+func update_max():
+	max_left = -1*game_manager.max_left * desired_pixles - max_offset
+	max_right = game_manager.max_right * desired_pixles + max_offset

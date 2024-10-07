@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var game_manager: Node = %GameManager#change if pos of tall grass holder moves
 @onready var world_buying_grid: Control = $"../../world_buying_grid"
+@onready var camera: Camera2D = $"../../Camera2D"
 
 var children = []
 
@@ -59,7 +60,6 @@ func cut_grass(right : bool):
 		game_manager.max_right += 1
 		label.position.x += desired_pixles/6
 		
-		#temp while buttons are in use
 		for button in buttons:
 			button.position.x += desired_pixles/6
 	else:
@@ -68,10 +68,10 @@ func cut_grass(right : bool):
 		game_manager.max_left += 1
 		label.position.x -= desired_pixles/6
 		
-		#temp while buttons are in use 
 		for button in buttons:
 			button.position.x -= desired_pixles/6
 	world_buying_grid._update_grid(right)
+	camera.update_max()
 	update_text()
 
 func can_buy(right : bool) -> bool:
