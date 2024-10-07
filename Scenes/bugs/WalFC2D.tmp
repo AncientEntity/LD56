@@ -124,7 +124,7 @@ position = Vector2(-60.131, -23.659)
 sprite_frames = SubResource("SpriteFrames_vgqto")
 animation = &"attack"
 autoplay = "default"
-frame_progress = 0.905477
+frame_progress = 0.743705
 
 [node name="LeftRay" parent="." index="2"]
 position = Vector2(-171, 106)

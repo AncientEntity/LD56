@@ -106,7 +106,7 @@ texture = ExtResource("2_fdg04")
 script = ExtResource("3_0agsb")
 
 [node name="AgroZone" type="Area2D" parent="Tower" index="0"]
-scale = Vector2(5, 5)
+scale = Vector2(4, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/AgroZone" index="0"]
 position = Vector2(8.57143, 1.42857)

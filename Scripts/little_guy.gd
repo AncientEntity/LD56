@@ -63,8 +63,8 @@ func WalkToObjective():
 	var distanceToTarget = self.get_position().distance_to(targetTaskObject.get_position())
 
 func WanderDirection():
-	var xBounds = [%LeftWall.get_position().x,%RightWall.get_position().x]
 	if ray_left.is_colliding():
+		print("is colliding")
 		if(ray_left.get_collider().get_name() == "LeftWall"):
 			moveDirection = 1
 			lastDirectionChangeTime = Time.get_unix_time_from_system() - rng.randi_range(-8,0)

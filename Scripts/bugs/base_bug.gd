@@ -4,7 +4,8 @@ class_name BaseBug
 var maxHealthbarSize = 191.0;
 var health
 var maxHealth = 100.0
-var damage = 20
+var damage = 10
+var base_kill = 200
 
 @onready var attackRays = [$LeftRay,$RightRay]
 var attacking = false
@@ -32,6 +33,8 @@ func _process(delta: float) -> void:
 				var building = ray.get_collider().get_parent()
 				building.set_health(building.health - delta * damage)
 				attacking = true
+			elif(ray.get_collider().get_parent().get_name() == "Pumpkin"):
+				ray.get_collider().get_parent().damaged(self)
 
 
 func set_health(newHealth):
@@ -40,3 +43,4 @@ func set_health(newHealth):
 	$HealthBar.visible = health < maxHealth
 	if health <= 0:
 		queue_free()
+		#%GameManager.money += base_kill * self.scale.x

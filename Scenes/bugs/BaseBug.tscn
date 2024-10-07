@@ -49,11 +49,5 @@ offset_bottom = -141.0
 grow_horizontal = 2
 color = Color(0.705939, 3.53761e-06, 3.85046e-07, 1)
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(2, 1)
-shape = SubResource("RectangleShape2D_ee87x")
-
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

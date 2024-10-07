@@ -7,7 +7,9 @@ var moveSpeed = 500
 var screen_delta = 0.25	    #% of the side of screen needed to move the camera
 
 @onready var game_manager: Node = %GameManager
+@onready var color_rect: ColorRect = $ColorRect
 
+var lostScreen = preload("res://Scenes/lostScreen.tscn")
 var pauseMenuScene = preload("res://Scenes/pause_menu.tscn")
 var activePauseMenu = null
 
@@ -22,7 +24,6 @@ var max_offset = 100.0
 @onready var max_left = -1*game_manager.max_left * desired_pixles - max_offset
 
 var baseResolution = [1152,648]
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var mouse_position = get_viewport().get_mouse_position()
@@ -42,16 +43,28 @@ func _process(delta: float) -> void:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 	
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") && !game_manager.lost:
 		if not activePauseMenu:
+			print(game_manager.lost)
 			activePauseMenu = pauseMenuScene.instantiate()
 			add_child(activePauseMenu)
 			Engine.time_scale = 0
 		else:
+			print(game_manager.lost)
 			activePauseMenu.queue_free()
 			activePauseMenu = null
 			Engine.time_scale = 1
-			
+	if(game_manager.lost && game_manager.lost_delay >0):
+		color_rect.z_index = 4096
+		var start_alpha = 120.0 / 255.0
+		var end_alpha = 200.0 / 255.0 
+		var normalized_time = clamp(game_manager.lost_delay / 3.0, 0.0, 1.0)
+		color_rect.color.a = lerp(end_alpha, start_alpha, normalized_time)
+
+func show_end_screen():
+	activePauseMenu = lostScreen.instantiate()
+	add_child(activePauseMenu)
+	Engine.time_scale = 0
 
 func update_max():
 	max_left = -1*game_manager.max_left * desired_pixles - max_offset

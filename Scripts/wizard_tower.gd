@@ -6,7 +6,7 @@ var chargeTime
 var y_offset = 55
 
 var agrodEnemies = []
-var damage = 5.0
+var damage = 50.0
 
 var fightSideBias = "LEFT"
 

@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dsub13l838g2n" path="res://Scenes/candy.tscn" id="5_pxuxl"]
 [ext_resource type="PackedScene" uid="uid://drhmty32g8h14" path="res://Scenes/Pumpkin.tscn" id="6_x6mbr"]
 [ext_resource type="PackedScene" uid="uid://dxnvqbog5sne3" path="res://Scenes/tall_grass.tscn" id="8_xhr1o"]
-[ext_resource type="PackedScene" uid="uid://druqr3814bht6" path="res://Scenes/bugs/WalkBug.tscn" id="9_1ablv"]
+[ext_resource type="Script" path="res://Scenes/round_lable.gd" id="12_ytt6t"]
 [ext_resource type="Texture2D" uid="uid://btiyf44cbotjk" path="res://Assets/background/skybox.png" id="15_ikgm5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q4k2a"]
@@ -104,7 +104,7 @@ motion_scale = Vector2(1, 0)
 motion_mirroring = Vector2(10000, 0)
 
 [node name="Bush1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-position = Vector2(-10629, -654)
+position = Vector2(-10381, -393)
 scale = Vector2(60.6945, 2.04707)
 texture = ExtResource("15_ikgm5")
 
@@ -149,7 +149,6 @@ offset_bottom = -171.0
 grow_horizontal = 2
 
 [node name="WaveLabel" type="Label" parent="Camera2D/WaveUI"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -161,7 +160,19 @@ label_settings = SubResource("LabelSettings_q4k2a")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="moneyadded" type="Label" parent="Camera2D/WaveUI"]
+layout_mode = 0
+offset_left = 376.552
+offset_top = 127.103
+offset_right = 550.552
+offset_bottom = 150.103
+text = "+$500
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ColorRect" type="ColorRect" parent="Camera2D"]
+modulate = Color(0, 0, 0, 1)
 z_index = 3000
 offset_left = -771.724
 offset_top = -543.448
@@ -169,6 +180,17 @@ offset_right = 781.276
 offset_bottom = 898.552
 mouse_filter = 2
 color = Color(0, 0, 0, 0.470588)
+
+[node name="Round_lable" type="Label" parent="Camera2D"]
+offset_left = 293.793
+offset_top = -314.483
+offset_right = 580.793
+offset_bottom = -291.483
+text = "round  x"
+horizontal_alignment = 2
+vertical_alignment = 1
+text_direction = 2
+script = ExtResource("12_ytt6t")
 
 [node name="WORLD" type="Node" parent="."]
 
@@ -246,6 +268,3 @@ it's cooler
 <3"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="BaseBug" parent="." instance=ExtResource("9_1ablv")]
-position = Vector2(-849, -119)

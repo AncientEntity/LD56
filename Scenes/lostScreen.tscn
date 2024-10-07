@@ -1,38 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://ch1vv4cg2sm5e"]
+[gd_scene load_steps=3 format=3 uid="uid://dr1as3dq226id"]
 
-[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_ibxkl"]
+[ext_resource type="Script" path="res://Scripts/died.gd" id="1_8kj53"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_6sdx1"]
+[sub_resource type="LabelSettings" id="LabelSettings_1r5ib"]
 font_size = 91
 
-[node name="PauseMenu" type="Control"]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -168.5
-offset_top = -168.5
-offset_right = 168.5
-offset_bottom = 168.5
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_ibxkl")
+[node name="LostScreen" type="Node2D"]
+position = Vector2(0, -185)
+script = ExtResource("1_8kj53")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = 4096
-layout_mode = 1
+custom_minimum_size = Vector2(600, 400)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -296.0
+offset_top = -24.0
+offset_right = 304.0
+offset_bottom = 376.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0784314, 0.0784314, 0.0784314, 0.717647)
 
 [node name="Label" type="Label" parent="."]
 z_index = 4096
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -40,13 +32,12 @@ offset_left = -24.5
 offset_right = 24.5
 offset_bottom = 23.0
 grow_horizontal = 2
-text = "MENU"
-label_settings = SubResource("LabelSettings_6sdx1")
+text = "You Lost"
+label_settings = SubResource("LabelSettings_1r5ib")
 horizontal_alignment = 1
 
 [node name="MMButton" type="Button" parent="."]
 z_index = 4096
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -59,7 +50,6 @@ text = "Main Menu"
 
 [node name="RSButton" type="Button" parent="."]
 z_index = 4096
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -72,7 +62,6 @@ text = "Reset"
 
 [node name="ExitButton" type="Button" parent="."]
 z_index = 4096
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
