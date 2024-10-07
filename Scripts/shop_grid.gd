@@ -117,3 +117,6 @@ func get_prices(id : int, sell : bool) -> int:
 		4:
 			return game_manager.tower_cost / (2 if sell else 1)
 	return 0
+
+func max() -> int:
+	return game_manager.max_left + game_manager.max_right

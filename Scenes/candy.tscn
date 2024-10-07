@@ -44,5 +44,5 @@ position = Vector2(4, -19)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_j87wf")
 autoplay = "default"
-frame_progress = 0.91597
+frame_progress = 0.149173
 script = ExtResource("4_dk5ca")

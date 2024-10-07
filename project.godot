@@ -15,10 +15,6 @@ run/main_scene="res://Scenes/game_scene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[autoload]
-
-CEnums="*res://Scripts/globals/enums.gd"
-
 [display]
 
 window/size/resizable=false

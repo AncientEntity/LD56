@@ -23,7 +23,8 @@ var items = {
 }
 
 func _ready() -> void:
-	max_ore = randi_range(5, 10) 
+	var rnd_offset = (game_manager.max())
+	max_ore = randi_range(20 + 2*rnd_offset, 50 + 2*rnd_offset)
 	print("ore is ", max_ore)
 	
 	popup_menu = self.get_popup()
