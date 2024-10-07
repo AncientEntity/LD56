@@ -16,7 +16,7 @@ func start_ready() :
 	sale_rng = rng 
 	
 	#calculating the OMEGA candy
-	if(rng >= 1.49):
+	if(rng == 1.49):
 		rng = 5
 		sale_rng = rng*rng
 	
