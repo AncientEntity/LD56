@@ -73,11 +73,6 @@ func cut_grass(right : bool):
 			button.position.x -= desired_pixles/6
 	world_buying_grid._update_grid(right)
 	update_text()
-	
-	#if children.back().global_position.x < 0:
-	#	%Camera2D.limit_left = children.back().global_position.x - 100
-	#else:
-	#	%Camera2D.limit_right = children.back().global_position.x + 100
 
 func can_buy(right : bool) -> bool:
 	if(game_manager.money >= game_manager.grass_cut_cost * ((game_manager.max_right - 1) if right else (game_manager.max_left - 1))):
