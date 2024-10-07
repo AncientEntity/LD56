@@ -69,8 +69,5 @@ sprite_frames = SubResource("SpriteFrames_ypfsb")
 autoplay = "default"
 frame_progress = 0.964718
 
-[node name="Area2D" parent="." index="1"]
-visible = true
-
-[node name="LeftRay" parent="." index="2"]
+[node name="LeftRay" parent="." index="3"]
 position = Vector2(-176, 0)

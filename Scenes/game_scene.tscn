@@ -248,5 +248,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BaseBug" parent="." instance=ExtResource("9_1ablv")]
-visible = false
-position = Vector2(488, -137)
+position = Vector2(331, -524)

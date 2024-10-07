@@ -6,7 +6,8 @@ var max_left = 2
 var max_right = 2
 
 #base cost for first grass on each side
-var grass_cut_cost = 500
+var grass_cut_cost = 400
+var grass_cut_cost_scale = 100
 
 var house_cost = 200
 var farm_cost = 50

@@ -75,17 +75,17 @@ func cut_grass(right : bool):
 	update_text()
 
 func can_buy(right : bool) -> bool:
-	if(game_manager.money >= game_manager.grass_cut_cost * ((game_manager.max_right - 1) if right else (game_manager.max_left - 1))):
-		game_manager.money -= game_manager.grass_cut_cost * ((game_manager.max_right - 1) if right else (game_manager.max_left - 1))
+	if(game_manager.money >= game_manager.grass_cut_cost + game_manager.grass_cut_cost_scale * ((game_manager.max_right - 1) if right else (game_manager.max_left - 1))):
+		game_manager.money -= game_manager.grass_cut_cost + game_manager.grass_cut_cost_scale * ((game_manager.max_right - 1) if right else (game_manager.max_left - 1))
 		game_manager.update_lables()
 		return true
 	return false
 
 func update_text():
 	if(self.get_name() == "GrassRight"):
-		label.text = "Cut for $%d"%[game_manager.grass_cut_cost * (game_manager.max_right - 1)]
+		label.text = "Cut for $%d"%[game_manager.grass_cut_cost + game_manager.grass_cut_cost_scale * (game_manager.max_right - 1)]
 	elif(self.get_name() == "GrassLeft"):
-		label.text = "Cut for $%d"%[game_manager.grass_cut_cost * (game_manager.max_left - 1)]
+		label.text = "Cut for $%d"%[game_manager.grass_cut_cost + game_manager.grass_cut_cost_scale * (game_manager.max_left - 1)]
 
 #temp function while buttons are here. Call cut_grass for function
 func _on_button_pressed(right : bool):
