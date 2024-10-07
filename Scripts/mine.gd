@@ -14,11 +14,15 @@ func _process(delta):
 		groth = 0
 		give_money()
 
-
 func give_money():
-	parent.sub_ore()
 	var rng = randi_range(2, rng_rate)
-	print("spawning ",rng)
+	if(parent.cur_mined > 0):
+		parent.sub_ore()
+	elif self.get_child_count() >= 1:
+		rng = 0
+	else:
+		parent.sub_ore()
+	
 	for i in rng:
 		var candy = candy.instantiate()
 		self.add_child(candy)

@@ -10,7 +10,7 @@ extends Control
 var tile_shop_asset = preload("res://Scenes/tile_shop.tscn")	#Shop Scene\
 
 var rock_asset = preload("res://Scenes/buildings/rock.tscn")
-
+const ROCK = preload("res://Scenes/buildings/rock.tscn")
 var rng_rate = 3 #spawn bolder every 1 in x
 var rng_pitty = 0
 var rng_max_pitty = 4
@@ -45,8 +45,6 @@ func _update_grid(right: bool):
 		self.grid_right.add_child(tile_asset)
 		
 		if(randi_range(0, rng_rate) == 0 || rng_pitty == rng_max_pitty):
-			if(rng_pitty == rng_max_pitty):
-				print("spawned through max pitty")
 			var rock = rock_asset.instantiate()
 			tile_asset.add_child(rock)
 			rock.global_position = Vector2(tile_asset.global_position.x + 75 + ((game_manager.max_right-1) * (150+60)), tile_asset.global_position.y +75)
@@ -54,7 +52,6 @@ func _update_grid(right: bool):
 			rng_pitty = 0
 		else:
 			rng_pitty += 1 
-			print("pitty is now ",rng_pitty)
 		
 	elif(_can_develop(right) && !right):
 		grids[2]["placed"] += 1
@@ -62,8 +59,6 @@ func _update_grid(right: bool):
 		self.grid_left.add_child(tile_asset)
 		
 		if(randi_range(0, rng_rate) == 0 || rng_pitty == rng_max_pitty):
-			if(rng_pitty == rng_max_pitty):
-				print("spawned through max pitty")
 			var rock = rock_asset.instantiate()
 			tile_asset.add_child(rock)
 			rock.global_position = Vector2(tile_asset.global_position.x +75 - ((game_manager.max_left-1) * (150+60)), tile_asset.global_position.y +75)
@@ -71,17 +66,14 @@ func _update_grid(right: bool):
 			rng_pitty = 0
 		else:
 			rng_pitty += 1 
-			print("pitty is now ",rng_pitty)
 
 
 func _can_develop(right : bool):
 	if(grids[1]["max"] >= grids[1]["placed"]+1 && right):
 		if(grids[1]["max"] >= grids[1]["placed"]+1):
-			print("adding right")
 			return true
 	elif(!right):
 		if(grids[2]["max"] >= grids[2]["placed"]+1):
-			print("adding left")
 			return true
 	return false
 
