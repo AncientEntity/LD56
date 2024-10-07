@@ -6,6 +6,7 @@ var right_boundry
 var moveSpeed = 500
 var screen_delta = 0.25	    #% of the side of screen needed to move the camera
 
+#var mul_vector = 
 var max_right
 var max_left
 

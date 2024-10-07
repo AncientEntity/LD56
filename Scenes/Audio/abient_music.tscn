@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwhueuybphv87"]
+
+[ext_resource type="AudioStream" uid="uid://6f2wtkgxe70e" path="res://Audio/halloween.mp3" id="1_dwi7l"]
+
+[node name="AbientMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_dwi7l")
+autoplay = true
+bus = &"Music"

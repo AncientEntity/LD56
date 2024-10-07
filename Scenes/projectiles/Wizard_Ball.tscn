@@ -49,6 +49,7 @@ scale = Vector2(0.214, 0.214)
 script = ExtResource("1_emqsk")
 
 [node name="WizardBall" type="Sprite2D" parent="."]
+z_index = 4090
 scale = Vector2(0.395, 0.395)
 texture = ExtResource("2_follg")
 
@@ -60,13 +61,15 @@ autoplay = "Wizard_ball_animation"
 
 [node name="Sprite2D" type="Sprite2D" parent="WizardBall"]
 modulate = Color(0.0891, 0.99, 0.77979, 0.184314)
-position = Vector2(0.000181082, -94.939)
+z_index = 4091
+position = Vector2(30.1773, 18.3471)
 scale = Vector2(12, 12)
 texture = ExtResource("3_8k36r")
 
 [node name="Sprite2D2" type="Sprite2D" parent="WizardBall"]
 modulate = Color(0.0891, 0.99, 0.77979, 0.184314)
-position = Vector2(0.000181082, -94.939)
+z_index = 4091
+position = Vector2(30.1773, 18.3472)
 scale = Vector2(7, 7)
 texture = ExtResource("3_8k36r")
 
