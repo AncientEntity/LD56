@@ -1,0 +1,222 @@
+[gd_scene load_steps=17 format=4 uid="uid://dbn52dtr75ahh"]
+
+[ext_resource type="Script" path="res://Scripts/mainmenu.gd" id="1_7gb20"]
+[ext_resource type="Texture2D" uid="uid://c6tucp517ucfm" path="res://Assets/background/bgrass.png" id="1_sdwfo"]
+[ext_resource type="Texture2D" uid="uid://bd5n55lpjmwpt" path="res://Assets/background/bush.png" id="2_8ova8"]
+[ext_resource type="Texture2D" uid="uid://7au5vtpp844f" path="res://Assets/groundTiles/tall_grass_3.png" id="3_a4adf"]
+[ext_resource type="Texture2D" uid="uid://bwq283pbeh8m0" path="res://Assets/groundTiles/tall_grass_1.png" id="4_yu1o8"]
+[ext_resource type="Texture2D" uid="uid://dbmpli0fgcghf" path="res://Assets/groundTiles/tall_grass_2.png" id="5_xp0kw"]
+[ext_resource type="Texture2D" uid="uid://ctolmdpg057cy" path="res://Assets/background/skybox.png" id="6_yt10g"]
+[ext_resource type="PackedScene" uid="uid://c85brqjbs6xhp" path="res://Scenes/camera_2d.tscn" id="9_2ga6s"]
+[ext_resource type="PackedScene" uid="uid://dxnvqbog5sne3" path="res://Scenes/tall_grass.tscn" id="12_n0nou"]
+[ext_resource type="PackedScene" uid="uid://r5pwxfyn4vt0" path="res://Scenes/buildings/tower.tscn" id="13_6umuk"]
+[ext_resource type="TileSet" uid="uid://46uh3g7vby3q" path="res://Assets/groundTiles/groundtileset.tres" id="13_xobpq"]
+[ext_resource type="PackedScene" uid="uid://drhmty32g8h14" path="res://Scenes/Pumpkin.tscn" id="14_w41he"]
+[ext_resource type="AudioStream" uid="uid://s6elfolv6p48" path="res://Audio/halloween.mp3" id="15_u624d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fxm21"]
+line_spacing = 50.0
+font_size = 91
+
+[sub_resource type="LabelSettings" id="LabelSettings_jord3"]
+font_size = 22
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mxl2y"]
+
+[node name="MMScene" type="Node2D"]
+script = ExtResource("1_7gb20")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2(0, 425)
+transform = Transform2D(1, 0, 0, 1, 0, 425)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -3
+motion_scale = Vector2(0.05, 0)
+motion_mirroring = Vector2(1940, 0)
+
+[node name="Bush2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(922, 63.5833)
+scale = Vector2(1.80093, 1.27392)
+texture = ExtResource("1_sdwfo")
+
+[node name="Bush3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(1311, 63.5833)
+scale = Vector2(1.80093, 1.27392)
+texture = ExtResource("1_sdwfo")
+
+[node name="Bush5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(144, 63.5833)
+scale = Vector2(1.80093, 1.27392)
+texture = ExtResource("1_sdwfo")
+
+[node name="Bush6" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(-244.5, 64.0001)
+scale = Vector2(1.80093, 1.27392)
+texture = ExtResource("1_sdwfo")
+
+[node name="Bush4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(533, 63.5833)
+scale = Vector2(1.80093, 1.27392)
+texture = ExtResource("1_sdwfo")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -2
+motion_scale = Vector2(0.2, 0)
+
+[node name="Bush1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-378, -407)
+texture = ExtResource("2_8ova8")
+
+[node name="Bush2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1961, -381)
+texture = ExtResource("2_8ova8")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -1
+motion_scale = Vector2(0.4, 0)
+
+[node name="Bush1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(84, -230)
+texture = ExtResource("3_a4adf")
+
+[node name="Bush2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(-240, -217)
+texture = ExtResource("4_yu1o8")
+
+[node name="Bush3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(-624, -193)
+texture = ExtResource("3_a4adf")
+
+[node name="Bush4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(543, -200)
+texture = ExtResource("5_xp0kw")
+
+[node name="Bush5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(842, -179)
+texture = ExtResource("4_yu1o8")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -12
+motion_scale = Vector2(1, 0)
+motion_mirroring = Vector2(10000, 0)
+
+[node name="Bush1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(1396, -654)
+scale = Vector2(8.67196, 2.04707)
+texture = ExtResource("6_yt10g")
+
+[node name="Camera2D" parent="." instance=ExtResource("9_2ga6s")]
+position = Vector2(-11, -143)
+scale = Vector2(1.45, 1.45)
+zoom = Vector2(0.68, 0.68)
+script = null
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+z_index = 3000
+offset_left = -771.724
+offset_top = -543.448
+offset_right = 781.276
+offset_bottom = 898.552
+mouse_filter = 2
+color = Color(0, 0, 0, 0.470588)
+
+[node name="Control" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -386.207
+offset_top = -284.138
+offset_right = 399.793
+offset_bottom = -156.138
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Camera2D/Control"]
+z_index = 4096
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_right = 250.0
+offset_bottom = 80.0
+grow_horizontal = 2
+text = "Pumpkin Defense 4"
+label_settings = SubResource("LabelSettings_fxm21")
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="Camera2D"]
+offset_left = -113.0
+offset_top = -33.0
+offset_right = -19.0
+offset_bottom = 28.0
+flat = true
+
+[node name="Label" type="Label" parent="Camera2D/PlayButton"]
+z_index = 4096
+layout_mode = 0
+offset_left = 9.55173
+offset_top = 13.0
+offset_right = 84.5517
+offset_bottom = 60.0
+text = "PLAY"
+label_settings = SubResource("LabelSettings_jord3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="Button" parent="Camera2D"]
+offset_left = 13.7931
+offset_top = -35.1724
+offset_right = 107.793
+offset_bottom = 25.8276
+flat = true
+
+[node name="Label" type="Label" parent="Camera2D/ExitButton"]
+z_index = 4096
+layout_mode = 0
+offset_left = 6.89655
+offset_top = 13.7931
+offset_right = 81.8966
+offset_bottom = 60.7931
+text = "EXIT"
+label_settings = SubResource("LabelSettings_jord3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WORLD" type="Node" parent="."]
+
+[node name="Ground" type="StaticBody2D" parent="WORLD"]
+position = Vector2(0, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WORLD/Ground"]
+position = Vector2(-1, -12)
+scale = Vector2(1.405, 1.405)
+shape = SubResource("WorldBoundaryShape2D_mxl2y")
+
+[node name="GrassRight" parent="WORLD" instance=ExtResource("12_n0nou")]
+position = Vector2(606, -578)
+script = null
+
+[node name="GrassLeft" parent="WORLD" instance=ExtResource("12_n0nou")]
+position = Vector2(-1851, -578)
+script = null
+
+[node name="TileMapLayer" type="TileMapLayer" parent="WORLD"]
+z_index = 150
+tile_map_data = PackedByteArray("AAD7/wAABwAAAAAAAAD8/wAACAAAAAAAAAD9/wAAKwAAAAAAAAD+/wAALAAAAAAAAAD//wAABwAAAAAAAAAAAAAACAAAAAAAAAABAAAALAAAAAAAAAACAAAACAAAAAAAAAADAAAACAAAAAAAAAAEAAAABwAAAAAAAAAFAAAABwAAAAAAAAD3/wAABwAAAAAAAAD4/wAACAAAAAAAAAD5/wAABwAAAAAAAAD6/wAACAAAAAAAAAAGAAAACAAAAAAAAAAHAAAACAAAAAAAAAAIAAAACAAAAAAAAAAJAAAABwAAAAAAAAAKAAAABwAAAAAAAAALAAAACAAAAAAAAAAMAAAACAAAAAAAAAANAAAABwAAAAAAAAD2/wAABwAAAAAAAAD1/wAACAAAAAAAAAD0/wAACAAAAAAAAADz/wAABwAAAAAAAADz/wEACQAAAAAAAAD0/wEACQAAAAAAAAD1/wEACQAAAAAAAAD2/wEACQAAAAAAAAD3/wEACQAAAAAAAAD4/wEACQAAAAAAAAD5/wEACQAAAAAAAAD6/wEACQAAAAAAAAD7/wEACQAAAAAAAAD8/wEACQAAAAAAAAD9/wEACQAAAAAAAAD+/wEACQAAAAAAAAD//wEACQAAAAAAAAAAAAEACQAAAAAAAAABAAEACQAAAAAAAAACAAEACQAAAAAAAAADAAEACQAAAAAAAAAEAAEACQAAAAAAAAAFAAEACQAAAAAAAAAGAAEACQAAAAAAAAAHAAEACQAAAAAAAAAIAAEACQAAAAAAAAAJAAEACQAAAAAAAAAKAAEACQAAAAAAAAALAAEACQAAAAAAAAAMAAEACQAAAAAAAAANAAEACQAAAAAAAADz/wIACgAAAAAAAAD0/wIACgAAAAAAAAD1/wIACgAAAAAAAAD2/wIACgAAAAAAAAD3/wIACgAAAAAAAAD4/wIACgAAAAAAAAD5/wIACgAAAAAAAAD6/wIACgAAAAAAAAD7/wIACgAAAAAAAAD8/wIACgAAAAAAAAD9/wIACgAAAAAAAAD+/wIACgAAAAAAAAD//wIACgAAAAAAAAAAAAIACgAAAAAAAAABAAIACgAAAAAAAAACAAIACgAAAAAAAAADAAIACgAAAAAAAAAEAAIACgAAAAAAAAAFAAIACgAAAAAAAAAGAAIACgAAAAAAAAAHAAIACgAAAAAAAAAIAAIACgAAAAAAAAAJAAIACgAAAAAAAAAKAAIACgAAAAAAAAALAAIACgAAAAAAAAAMAAIACgAAAAAAAAANAAIACgAAAAAAAADp/wAABwAAAAAAAADp/wEACQAAAAAAAADp/wIACgAAAAAAAADq/wAACAAAAAAAAADq/wEACQAAAAAAAADq/wIACgAAAAAAAADr/wAACAAAAAAAAADr/wEACQAAAAAAAADr/wIACgAAAAAAAADs/wAABwAAAAAAAADs/wEACQAAAAAAAADs/wIACgAAAAAAAADt/wAABwAAAAAAAADt/wEACQAAAAAAAADt/wIACgAAAAAAAADu/wAACAAAAAAAAADu/wEACQAAAAAAAADu/wIACgAAAAAAAADv/wAABwAAAAAAAADv/wEACQAAAAAAAADv/wIACgAAAAAAAADw/wAACAAAAAAAAADw/wEACQAAAAAAAADw/wIACgAAAAAAAADx/wAABwAAAAAAAADx/wEACQAAAAAAAADx/wIACgAAAAAAAADy/wAACAAAAAAAAADy/wEACQAAAAAAAADy/wIACgAAAAAAAAAOAAAABwAAAAAAAAAOAAEACQAAAAAAAAAOAAIACgAAAAAAAAAPAAAACAAAAAAAAAAPAAEACQAAAAAAAAAPAAIACgAAAAAAAAAQAAAACAAAAAAAAAAQAAEACQAAAAAAAAAQAAIACgAAAAAAAAARAAAABwAAAAAAAAARAAEACQAAAAAAAAARAAIACgAAAAAAAAASAAAABwAAAAAAAAASAAEACQAAAAAAAAASAAIACgAAAAAAAAATAAAACAAAAAAAAAATAAEACQAAAAAAAAATAAIACgAAAAAAAAAUAAAABwAAAAAAAAAUAAEACQAAAAAAAAAUAAIACgAAAAAAAAAVAAAACAAAAAAAAAAVAAEACQAAAAAAAAAVAAIACgAAAAAAAAAWAAAABwAAAAAAAAAWAAEACQAAAAAAAAAWAAIACgAAAAAAAAAXAAAACAAAAAAAAAAXAAEACQAAAAAAAAAXAAIACgAAAAAAAAAYAAAABwAAAAAAAAAYAAEACQAAAAAAAAAYAAIACgAAAAAAAAAZAAAACAAAAAAAAAAZAAEACQAAAAAAAAAZAAIACgAAAAAAAAAaAAAACAAAAAAAAAAaAAEACQAAAAAAAAAaAAIACgAAAAAAAAAbAAAABwAAAAAAAAAbAAEACQAAAAAAAAAbAAIACgAAAAAAAAAcAAAABwAAAAAAAAAcAAEACQAAAAAAAAAcAAIACgAAAAAAAAAdAAAACAAAAAAAAAAdAAEACQAAAAAAAAAdAAIACgAAAAAAAAAeAAAABwAAAAAAAAAeAAEACQAAAAAAAAAeAAIACgAAAAAAAAAfAAAACAAAAAAAAAAfAAEACQAAAAAAAAAfAAIACgAAAAAAAAAgAAAABwAAAAAAAAAgAAEACQAAAAAAAAAgAAIACgAAAAAAAAAhAAAACAAAAAAAAAAhAAEACQAAAAAAAAAhAAIACgAAAAAAAAAiAAAABwAAAAAAAAAiAAEACQAAAAAAAAAiAAIACgAAAAAAAAAjAAAACAAAAAAAAAAjAAEACQAAAAAAAAAjAAIACgAAAAAAAAAkAAAACAAAAAAAAAAkAAEACQAAAAAAAAAkAAIACgAAAAAAAAAlAAAABwAAAAAAAAAlAAEACQAAAAAAAAAlAAIACgAAAAAAAAAmAAAABwAAAAAAAAAmAAEACQAAAAAAAAAmAAIACgAAAAAAAAAnAAAACAAAAAAAAAAnAAEACQAAAAAAAAAnAAIACgAAAAAAAAAoAAAABwAAAAAAAAAoAAEACQAAAAAAAAAoAAIACgAAAAAAAAApAAAACAAAAAAAAAApAAEACQAAAAAAAAApAAIACgAAAAAAAAAqAAAABwAAAAAAAAAqAAEACQAAAAAAAAAqAAIACgAAAAAAAAArAAAABwAAAAAAAAArAAEACQAAAAAAAAArAAIACgAAAAAAAADf/wAACAAAAAAAAADf/wEACQAAAAAAAADf/wIACgAAAAAAAADg/wAACAAAAAAAAADg/wEACQAAAAAAAADg/wIACgAAAAAAAADh/wAACAAAAAAAAADh/wEACQAAAAAAAADh/wIACgAAAAAAAADi/wAABwAAAAAAAADi/wEACQAAAAAAAADi/wIACgAAAAAAAADj/wAABwAAAAAAAADj/wEACQAAAAAAAADj/wIACgAAAAAAAADk/wAACAAAAAAAAADk/wEACQAAAAAAAADk/wIACgAAAAAAAADl/wAABwAAAAAAAADl/wEACQAAAAAAAADl/wIACgAAAAAAAADm/wAACAAAAAAAAADm/wEACQAAAAAAAADm/wIACgAAAAAAAADn/wAABwAAAAAAAADn/wEACQAAAAAAAADn/wIACgAAAAAAAADo/wAACAAAAAAAAADo/wEACQAAAAAAAADo/wIACgAAAAAAAADW/wAABwAAAAAAAADW/wEACQAAAAAAAADW/wIACgAAAAAAAADX/wAACAAAAAAAAADX/wEACQAAAAAAAADX/wIACgAAAAAAAADY/wAACAAAAAAAAADY/wEACQAAAAAAAADY/wIACgAAAAAAAADZ/wAABwAAAAAAAADZ/wEACQAAAAAAAADZ/wIACgAAAAAAAADa/wAABwAAAAAAAADa/wEACQAAAAAAAADa/wIACgAAAAAAAADb/wAACAAAAAAAAADb/wEACQAAAAAAAADb/wIACgAAAAAAAADc/wAABwAAAAAAAADc/wEACQAAAAAAAADc/wIACgAAAAAAAADd/wAACAAAAAAAAADd/wEACQAAAAAAAADd/wIACgAAAAAAAADe/wAABwAAAAAAAADe/wEACQAAAAAAAADe/wIACgAAAAAAAAAsAAAACAAAAAAAAAAsAAEACQAAAAAAAAAsAAIACgAAAAAAAAAtAAAACAAAAAAAAAAtAAEACQAAAAAAAAAtAAIACgAAAAAAAAAuAAAABwAAAAAAAAAuAAEACQAAAAAAAAAuAAIACgAAAAAAAAAvAAAABwAAAAAAAAAvAAEACQAAAAAAAAAvAAIACgAAAAAAAAAwAAAACAAAAAAAAAAwAAEACQAAAAAAAAAwAAIACgAAAAAAAAAxAAAABwAAAAAAAAAxAAEACQAAAAAAAAAxAAIACgAAAAAAAAAyAAAACAAAAAAAAAAyAAEACQAAAAAAAAAyAAIACgAAAAAAAAAzAAAABwAAAAAAAAAzAAEACQAAAAAAAAAzAAIACgAAAAAAAAA0AAAACAAAAAAAAAA0AAEACQAAAAAAAAA0AAIACgAAAAAAAAA=")
+tile_set = ExtResource("13_xobpq")
+
+[node name="Pumpkin" parent="WORLD" instance=ExtResource("14_w41he")]
+z_index = -1
+position = Vector2(3, -175)
+
+[node name="AbientMusic" type="AudioStreamPlayer2D" parent="WORLD"]
+stream = ExtResource("15_u624d")
+autoplay = true
+
+[node name="BaseBuilding" parent="WORLD" instance=ExtResource("13_6umuk")]
+position = Vector2(412, -96)
+
+[connection signal="button_down" from="Camera2D/PlayButton" to="." method="_on_play_button_button_down"]
+[connection signal="button_down" from="Camera2D/ExitButton" to="." method="_on_exit_button_button_down"]
