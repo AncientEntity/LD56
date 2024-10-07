@@ -17,7 +17,7 @@ var money = 1000000
 
 var roundState = CEnums.ERoundState.Invasion
 var roundTimeLeft
-var roundTime = 45
+var roundTime = 30
 var roundNumber = 0
 
 var bugs = [preload("res://Scenes/bugs/WalkBug.tscn")]
@@ -27,7 +27,8 @@ func update_lables():
 	money_lable.update_text()
 
 func _ready() -> void:
-	roundTimeLeft = roundTime
+	roundTimeLeft = roundTime / 2 - 3
+	
 
 func _process(delta: float) -> void:
 	handleWave(delta)
@@ -59,7 +60,7 @@ func handleWave(delta : float):
 			newBug.position.y -= 75
 	elif roundTimeLeft <= roundTime - 2.0 and roundTimeLeft >= roundTime / 2:
 		%WaveUI/WaveLabel.visible = false
-	elif roundTimeLeft <= roundTime / 2:
+	elif roundTimeLeft <= roundTime / 2 and roundTimeLeft > roundTime / 2 - 2:
 		%WaveUI/WaveLabel.visible = true
 		%WaveUI/WaveLabel.text = "Wave Defeated"
 		roundState = CEnums.ERoundState.Peaceful

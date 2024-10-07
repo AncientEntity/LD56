@@ -3,6 +3,7 @@ class_name Building
 
 @export var maxHealth = 100.0;
 var health
+@export var healthRegenSpeed = 0.25;
 
 var maxHealthbarSize = 191.0;
 
@@ -15,7 +16,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	set_health(health + 0.01) #changed from 0.25 so longer buildings
+	set_health(health + healthRegenSpeed * delta) #changed from 0.25 so longer buildings
 	
 func set_health(newHealth : float) -> void:
 	health = clamp(newHealth,0,maxHealth)
