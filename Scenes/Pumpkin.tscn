@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://drhmty32g8h14"]
+[gd_scene load_steps=12 format=3 uid="uid://drhmty32g8h14"]
 
 [ext_resource type="Texture2D" uid="uid://cdalwsq03fnrq" path="res://Assets/groundTiles/Pumpkin.png" id="1_hauf0"]
 [ext_resource type="Texture2D" uid="uid://c22l5rrl88c3j" path="res://Assets/candleAssets/candle.png" id="2_qdwyv"]
+[ext_resource type="Script" path="res://Scenes/pumpkin.gd" id="2_utslf"]
 [ext_resource type="Texture2D" uid="uid://dnuhxmssbsh02" path="res://Assets/candleAssets/flame2.png" id="3_11p3p"]
 [ext_resource type="Texture2D" uid="uid://dcr5h7kp2bhdb" path="res://Assets/candleAssets/flame1.png" id="4_dua28"]
 [ext_resource type="Texture2D" uid="uid://gt7j01xtq24p" path="res://Assets/candleAssets/flame3.png" id="5_g202a"]
@@ -138,10 +139,14 @@ animations = [{
 "speed": 17.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2usp"]
+size = Vector2(262.957, 1390.22)
+
 [node name="Pumpkin" type="Sprite2D"]
 position = Vector2(-7.62939e-06, 2)
 scale = Vector2(0.532407, 0.532407)
 texture = ExtResource("1_hauf0")
+script = ExtResource("2_utslf")
 
 [node name="Candle" type="Sprite2D" parent="."]
 z_index = 4000
@@ -229,3 +234,10 @@ z_index = 4092
 position = Vector2(137.113, 63.8609)
 scale = Vector2(2.25218, 1.66087)
 texture = ExtResource("8_bp2we")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3.75652, -260.926)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_b2usp")
