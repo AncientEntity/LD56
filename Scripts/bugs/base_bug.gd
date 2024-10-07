@@ -19,13 +19,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:	
-	#rigid_body_2d.linear_velocity.y += gravity * delta
-	
-	print("is coliding %s and got %s"%[gravityRay.is_colliding(), gravityRay.get_collider()])
 	if(!gravityRay.is_colliding()):
 		self.position.y += gravity * delta
-	else:
-		print(gravityRay.get_collider().get_name())
 	
 	attacking = false
 	for ray in attackRays:
