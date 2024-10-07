@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 CEnums="*res://Scripts/globals/enums.gd"
-AbientMusic="*res://Scenes/Audio/abient_music.tscn"
 
 [display]
 
