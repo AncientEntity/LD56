@@ -28,11 +28,11 @@ var baseResolution = [1152,648]
 func _process(delta: float) -> void:
 	var mouse_position = get_viewport().get_mouse_position()
 	var mouseXPercent = mouse_position.x / get_window().content_scale_size.x
-	
-	if mouseXPercent <= screen_delta and mouseXPercent > 0 and max_left <= self.position.x:
+	#and mouseXPercent > 0
+	if mouseXPercent <= screen_delta  and max_left <= self.position.x:
 		#LEFT
 		position.x -= moveSpeed * delta * (1 - mouseXPercent/screen_delta)
-	elif 1.0 - mouseXPercent <= screen_delta and mouseXPercent < 1 and max_right >= self.position.x:
+	elif 1.0 - mouseXPercent <= screen_delta and max_right >= self.position.x:
 		#RIGHT
 		position.x += moveSpeed * delta * (1 - (1 - mouseXPercent)/screen_delta)
 			

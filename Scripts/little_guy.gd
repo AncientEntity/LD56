@@ -20,28 +20,45 @@ var moveSpeed = 100.0
 var moveDirection = 0
 var lastDirectionChangeTime = 0
 
+var start_pos = Vector2(0,0)
+var max_distance = 100
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#start_pos = self.position
 	owner = get_parent().owner
 	pass # Replace with function body.
 
 func _process(delta):
-	if agrodEnemies.size() > 0 or %GameManager.roundState == CEnums.ERoundState.Invasion:
+	if agrodEnemies.size() > 0:
 		currentTask = CEnums.ECurrentTask.FIGHTING
 	else:
 		currentTask = CEnums.ECurrentTask.IDLE
+	#if(self.position.x > start_pos.x + max_distance):
+		#moveDirection = -1
+		#lastDirectionChangeTime = Time.get_unix_time_from_system() - rng.randi_range(-8,0)
+		#self.linear_velocity.x *= -1
+		#print("MAX R")
+		#
+	#if(self.global_position.x < start_pos.x - max_distance):
+		#moveDirection = 1
+		#lastDirectionChangeTime = Time.get_unix_time_from_system() - rng.randi_range(-8,0)
+		#self.linear_velocity.x *= -1
+		#print("MAX L")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	match currentTask:
 		CEnums.ECurrentTask.IDLE:
 			IdleTask(delta)
-		CEnums.ECurrentTask.HARVESTING: #todo
-			WalkToObjective()
-		CEnums.ECurrentTask.MINING: #todo
-			WalkToObjective()
+		#CEnums.ECurrentTask.HARVESTING: #todo
+			#WalkToObjective()
+		#CEnums.ECurrentTask.MINING: #todo
+			#WalkToObjective()
 		CEnums.ECurrentTask.FIGHTING:
 			Fight()
+		_:
+			IdleTask(delta)
 func Fight():
 	if Time.get_unix_time_from_system() - lastShotTime < shootDelay:
 		return
@@ -62,19 +79,25 @@ func WalkToObjective():
 	# todo
 	var distanceToTarget = self.get_position().distance_to(targetTaskObject.get_position())
 
+
+
+
 func WanderDirection():
+	print("wander dir")
 	if ray_left.is_colliding():
 		print("is colliding")
 		if(ray_left.get_collider().get_name() == "LeftWall"):
+			print("left")
 			moveDirection = 1
 			lastDirectionChangeTime = Time.get_unix_time_from_system() - rng.randi_range(-8,0)
 			return
 	elif ray_right.is_colliding():
+		print("is colliding")
 		if(ray_right.get_collider().get_name() == "RightWall"):
+			print("Right")
 			moveDirection = -1
 			lastDirectionChangeTime = Time.get_unix_time_from_system() - rng.randi_range(-8,0)
 			return
-
 	if Time.get_unix_time_from_system() - lastDirectionChangeTime < 0 and moveDirection != 0:
 		return
 	

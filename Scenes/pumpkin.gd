@@ -4,6 +4,8 @@ extends Sprite2D
 @onready var glow: Sprite2D = $Glow
 @onready var glow_2: Sprite2D = $Glow2
 
+func _ready() -> void:
+	pass
 
 func damaged(collider : Node2D):
 	game_manager.life -= 1

@@ -14,16 +14,16 @@ var max_right = 2
 var grass_cut_cost = 400
 var grass_cut_cost_scale = 200
 
-var house_cost = 200
+var house_cost = 100
 var farm_cost = 50
-var mine_cost = 200
+var mine_cost = 300
 var tower_cost = 500
 
 var money = 450
 
 var roundState = CEnums.ERoundState.Invasion
 var roundTimeLeft
-var roundTime = 20
+var roundTime = 30
 var roundNumber = 0
 
 
@@ -73,13 +73,13 @@ func handleWave(delta : float):
 			var newBug = bugs[rng.randi_range(0,bugs.size()-1)].instantiate()
 			if rng.randi_range(0,100) <= 50:
 				newBug.set_global_position($"../WORLD/GrassLeft/LeftWall".global_position)
-				newBug.position.x -= bug_offset
+				newBug.position.x -= randi_range(bug_offset, bug_offset*2)
 				leftCount += 1
 				newBug.position.x -= leftCount * 50
 				newBug.direction = 1
 			else:
 				newBug.set_global_position($"../WORLD/GrassRight/RightWall".global_position)
-				newBug.position.x += bug_offset
+				newBug.position.x += randi_range(bug_offset, bug_offset*2)
 				rightCount += 1
 				newBug.position.x += rightCount * 50
 				newBug.direction = -1
@@ -91,10 +91,10 @@ func handleWave(delta : float):
 			newBug.damage = (float(newBug.damage) + 2*roundNumber) * size_rng
 			get_node("../WORLD").add_child(newBug)
 			newBug.position.y -= 200
-	elif roundTimeLeft <= roundTime - 2.0 and roundTimeLeft >= roundTime / 2:
+	elif roundTimeLeft <= roundTime - 2.0 and roundTimeLeft >= roundTime:
 		%WaveUI/WaveLabel.visible = false
 		moneyadded.visible = false
-	elif roundTimeLeft <= roundTime / 2 and roundTimeLeft > roundTime / 2 - 2:
+	elif roundTimeLeft <= roundTime / 2 and roundTimeLeft > roundTime - 2:
 		%WaveUI/WaveLabel.visible = true
 		moneyadded.visible = true
 		#%WaveUI/WaveLabel.text = "Wave Defeated"

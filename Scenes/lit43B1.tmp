@@ -35,10 +35,10 @@ animations = [{
 radius = 195.164
 
 [node name="LittleGuy" type="RigidBody2D"]
-z_index = 2900
+z_index = 50
 position = Vector2(0, 16)
 collision_layer = 0
-collision_mask = 5
+collision_mask = 4
 can_sleep = false
 lock_rotation = true
 script = ExtResource("1_qbqcl")
@@ -70,19 +70,17 @@ texture = ExtResource("6_qc125")
 
 [node name="RayLeft" type="RayCast2D" parent="."]
 position = Vector2(0, -5)
-target_position = Vector2(-44, 0)
-hit_from_inside = true
+target_position = Vector2(-27, 1)
 
 [node name="RayRight" type="RayCast2D" parent="."]
 position = Vector2(0, -5)
-target_position = Vector2(47, 0)
-collision_mask = 3
+target_position = Vector2(27, 0)
 
 [node name="AgroZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AgroZone"]
 shape = SubResource("CircleShape2D_0uebi")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="child_entered_tree" from="RayLeft" to="." method="_on_ray_left_child_entered_tree"]
 [connection signal="area_entered" from="AgroZone" to="." method="_on_agro_zone_area_entered"]
 [connection signal="area_exited" from="AgroZone" to="." method="_on_agro_zone_area_exited"]

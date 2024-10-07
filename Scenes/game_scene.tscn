@@ -211,6 +211,7 @@ position = Vector2(606, -578)
 unique_name_in_owner = true
 position = Vector2(14.3267, 604)
 scale = Vector2(0.95511, 1)
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WORLD/GrassRight/RightWall"]
 position = Vector2(-1, -141)
@@ -226,6 +227,7 @@ position = Vector2(-1851, -578)
 unique_name_in_owner = true
 position = Vector2(1178.61, 595)
 scale = Vector2(0.95511, 1)
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WORLD/GrassLeft/LeftWall"]
 position = Vector2(-1, -141)
