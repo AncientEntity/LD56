@@ -3,9 +3,8 @@ extends AnimatedSprite2D
 var groth_speed = 200
 var groth = 0
 var total_frames = 3
+var rng_rate = 4
 
-
-@onready var money_lable: Label = %money_lable
 const candy = preload("res://Scenes/candy.tscn")
 
 func _ready():
@@ -22,7 +21,10 @@ func _process(delta):
 
 
 func give_money():
-	var candy = candy.instantiate()
-	self.add_child(candy)
-	candy.position = Vector2(self.position.x - 85, self.position.y + 20)
-	candy.do_move(true)
+	var rng = randi_range(1, rng_rate)
+	print("spawning ",rng)
+	for i in rng:
+		var candy = candy.instantiate()
+		self.add_child(candy)
+		candy.position = Vector2(self.position.x - randi_range(10, 150) , self.position.y + randi_range(-50, 50))
+		candy.do_move(true)
