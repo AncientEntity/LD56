@@ -8,6 +8,7 @@ var pos_offset = Vector2 ( 18, -7 )
 
 var has_land = false
 var spawned_rock = false
+var max_ore
 
 #Holders
 var popup_menu
@@ -22,6 +23,9 @@ var items = {
 }
 
 func _ready() -> void:
+	max_ore = randi_range(5, 10) 
+	print("ore is ", max_ore)
+	
 	popup_menu = self.get_popup()
 	#estabilishing what to do when item is selected
 	popup_menu.id_pressed.connect(on_item_selected)
@@ -71,6 +75,17 @@ func on_item_selected(id):
 			print("Invalid Money")
 			spawned_asset.queue_free()
 		
+
+func sub_ore():
+	max_ore -= 1
+	if(max_ore <= 0):
+		for child in self.get_children():
+			child.queue_free()
+		self.modulate = Color("#FFFFFF00")
+		self.icon = DASHED_SHOP
+		has_land = false
+		spawned_rock = false
+		update_items()
 
 func destroy():
 	free_childen()

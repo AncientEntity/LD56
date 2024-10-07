@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfc0ghnysm1yv"]
+[gd_scene load_steps=4 format=3 uid="uid://dfc0ghnysm1yv"]
 
 [ext_resource type="PackedScene" uid="uid://bbmokkmpfdeg6" path="res://Scenes/buildings/BaseBuilding.tscn" id="1_osiaw"]
 [ext_resource type="Texture2D" uid="uid://cctycljgfdvgw" path="res://Assets/groundTiles/mine.png" id="2_8n2ok"]
+[ext_resource type="Script" path="res://Scripts/mine.gd" id="3_lmrak"]
 
 [node name="BaseBuilding" instance=ExtResource("1_osiaw")]
 position = Vector2(-2.5, -1)
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+[node name="mine" type="Sprite2D" parent="." index="0"]
 position = Vector2(96, 69)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("2_8n2ok")
+script = ExtResource("3_lmrak")

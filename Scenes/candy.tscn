@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsub13l838g2n"]
+[gd_scene load_steps=8 format=3 uid="uid://dsub13l838g2n"]
 
 [ext_resource type="Texture2D" uid="uid://bmvxvom4pl0kr" path="res://Assets/groundTiles/candy3.png" id="1_gc6os"]
+[ext_resource type="Texture2D" uid="uid://biu6spky57m48" path="res://Assets/groundTiles/candy3_in.png" id="2_0y3uk"]
 [ext_resource type="Texture2D" uid="uid://cpbp80e7yxumo" path="res://Assets/groundTiles/candy2.png" id="2_kmljs"]
 [ext_resource type="Texture2D" uid="uid://b1ynp7bd22tg8" path="res://Assets/groundTiles/candy1.png" id="3_0q274"]
 [ext_resource type="Script" path="res://Scripts/move_towards.gd" id="4_dk5ca"]
+[ext_resource type="Texture2D" uid="uid://bhs7iy5siw4nf" path="res://Assets/groundTiles/candy1_in.png" id="4_iaohw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j87wf"]
 animations = [{
@@ -12,17 +14,29 @@ animations = [{
 "texture": ExtResource("1_gc6os")
 }, {
 "duration": 1.0,
+"texture": ExtResource("2_0y3uk")
+}, {
+"duration": 1.0,
 "texture": ExtResource("2_kmljs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iaohw")
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_0q274")
 }, {
 "duration": 1.0,
+"texture": ExtResource("4_iaohw")
+}, {
+"duration": 1.0,
 "texture": ExtResource("2_kmljs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0y3uk")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [node name="Candy" type="AnimatedSprite2D"]
@@ -30,5 +44,5 @@ position = Vector2(4, -19)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_j87wf")
 autoplay = "default"
-frame_progress = 0.0527998
+frame_progress = 0.91597
 script = ExtResource("4_dk5ca")
