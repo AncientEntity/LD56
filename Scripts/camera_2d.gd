@@ -8,6 +8,9 @@ var screen_delta = 0.25	    #% of the side of screen needed to move the camera
 
 @onready var game_manager: Node = %GameManager
 
+var pauseMenuScene = preload("res://Scenes/pause_menu.tscn")
+var activePauseMenu = null
+
 #WARNING if this is changed from 60 then the position of tall_grass needs to all be changed
 #(tile_shop min size + grid_H_seperation) = desired_pixles is the total pixles needed for all grass items to be
 #ONLY change that through the scale of THIS Grass Node2D
@@ -37,6 +40,18 @@ func _process(delta: float) -> void:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+	
+	if Input.is_action_just_pressed("pause"):
+		if not activePauseMenu:
+			activePauseMenu = pauseMenuScene.instantiate()
+			add_child(activePauseMenu)
+			Engine.time_scale = 0
+		else:
+			activePauseMenu.queue_free()
+			activePauseMenu = null
+			Engine.time_scale = 1
+			
 
 func update_max():
 	max_left = -1*game_manager.max_left * desired_pixles - max_offset
