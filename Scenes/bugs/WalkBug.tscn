@@ -1,8 +1,56 @@
-[gd_scene load_steps=4 format=3 uid="uid://druqr3814bht6"]
+[gd_scene load_steps=15 format=3 uid="uid://druqr3814bht6"]
 
 [ext_resource type="PackedScene" uid="uid://du1ldsprq36pn" path="res://Scenes/bugs/BaseBug.tscn" id="1_unmhu"]
 [ext_resource type="Texture2D" uid="uid://b24w73b05jtam" path="res://Assets/walk/temp_base.png" id="2_h3mox"]
 [ext_resource type="Script" path="res://Scripts/bugs/walkbug.gd" id="2_sagtk"]
+[ext_resource type="Texture2D" uid="uid://ctmi516ighkkt" path="res://Assets/walk/Leg/Untitled_Artwork-1.png" id="4_q18in"]
+[ext_resource type="Texture2D" uid="uid://cyt4qgje5k5be" path="res://Assets/walk/Leg/Untitled_Artwork-2.png" id="5_33es7"]
+[ext_resource type="Texture2D" uid="uid://bdm5jgv72452i" path="res://Assets/walk/Leg/Untitled_Artwork-3.png" id="6_3hgtn"]
+[ext_resource type="Texture2D" uid="uid://hbmtkdodve6x" path="res://Assets/walk/Leg/Untitled_Artwork-4.png" id="7_w8u42"]
+[ext_resource type="Texture2D" uid="uid://ouw0ejejwyel" path="res://Assets/walk/Leg/Untitled_Artwork-5.png" id="8_4l1as"]
+[ext_resource type="Texture2D" uid="uid://b8r2ibeapdyme" path="res://Assets/walk/Leg/Untitled_Artwork-6.png" id="9_5i78r"]
+[ext_resource type="Texture2D" uid="uid://04vn7vxsqewm" path="res://Assets/walk/Leg/Untitled_Artwork-7.png" id="10_v1ir0"]
+[ext_resource type="Texture2D" uid="uid://cso4bs6q3cta4" path="res://Assets/walk/Leg/Untitled_Artwork-8.png" id="11_x5re5"]
+[ext_resource type="Texture2D" uid="uid://cidbttkjo1vq7" path="res://Assets/walk/Leg/Untitled_Artwork-9.png" id="12_ipd1h"]
+[ext_resource type="Texture2D" uid="uid://calg6l1vj4dwj" path="res://Assets/walk/Leg/Untitled_Artwork-10.png" id="13_xb40u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ypfsb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_q18in")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_33es7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3hgtn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w8u42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4l1as")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5i78r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_v1ir0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_x5re5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ipd1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_xb40u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="BaseBug" instance=ExtResource("1_unmhu")]
 script = ExtResource("2_sagtk")
@@ -12,6 +60,13 @@ z_index = 10
 scale = Vector2(0.204333, 0.204333)
 texture = ExtResource("2_h3mox")
 offset = Vector2(-1000, 0)
+
+[node name="Legs" type="AnimatedSprite2D" parent="WalkBug" index="0"]
+z_index = 40
+position = Vector2(0, -83.1975)
+sprite_frames = SubResource("SpriteFrames_ypfsb")
+autoplay = "default"
+frame_progress = 0.841644
 
 [node name="LeftRay" parent="." index="2"]
 position = Vector2(-176, 0)
