@@ -38,6 +38,7 @@ radius = 195.164
 z_index = 50
 position = Vector2(0, 16)
 collision_layer = 0
+collision_mask = 4
 can_sleep = false
 lock_rotation = true
 script = ExtResource("1_qbqcl")

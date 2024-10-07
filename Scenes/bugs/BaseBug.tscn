@@ -11,12 +11,12 @@ script = ExtResource("1_insh4")
 [node name="Area2D" type="Area2D" parent="." groups=["bugs"]]
 position = Vector2(165, 102)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(2, 1)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-163, -101)
 shape = SubResource("RectangleShape2D_ee87x")
 
 [node name="LeftRay" type="RayCast2D" parent="."]
-position = Vector2(-173, 77)
+position = Vector2(-173, 98)
 target_position = Vector2(-50, 0)
 collision_mask = 2
 hit_from_inside = true
@@ -24,7 +24,7 @@ collide_with_areas = true
 collide_with_bodies = false
 
 [node name="RightRay" type="RayCast2D" parent="."]
-position = Vector2(178, 79)
+position = Vector2(173, 103)
 target_position = Vector2(50, 0)
 collision_mask = 2
 hit_from_inside = true
@@ -33,7 +33,7 @@ collide_with_bodies = false
 
 [node name="DownRay" type="RayCast2D" parent="."]
 target_position = Vector2(0, 131)
-collision_mask = 2
+collision_mask = 4
 hit_from_inside = true
 collide_with_areas = true
 
