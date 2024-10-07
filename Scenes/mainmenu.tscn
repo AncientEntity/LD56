@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dbn52dtr75ahh"]
+[gd_scene load_steps=16 format=4 uid="uid://dbn52dtr75ahh"]
 
 [ext_resource type="Script" path="res://Scripts/mainmenu.gd" id="1_7gb20"]
 [ext_resource type="Texture2D" uid="uid://c6tucp517ucfm" path="res://Assets/background/bgrass.png" id="1_sdwfo"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://r5pwxfyn4vt0" path="res://Scenes/buildings/tower.tscn" id="13_6umuk"]
 [ext_resource type="TileSet" uid="uid://46uh3g7vby3q" path="res://Assets/groundTiles/groundtileset.tres" id="13_xobpq"]
 [ext_resource type="PackedScene" uid="uid://drhmty32g8h14" path="res://Scenes/Pumpkin.tscn" id="14_w41he"]
-[ext_resource type="AudioStream" uid="uid://s6elfolv6p48" path="res://Audio/halloween.mp3" id="15_u624d"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fxm21"]
 line_spacing = 50.0
@@ -210,10 +209,6 @@ tile_set = ExtResource("13_xobpq")
 [node name="Pumpkin" parent="WORLD" instance=ExtResource("14_w41he")]
 z_index = -1
 position = Vector2(3, -175)
-
-[node name="AbientMusic" type="AudioStreamPlayer2D" parent="WORLD"]
-stream = ExtResource("15_u624d")
-autoplay = true
 
 [node name="BaseBuilding" parent="WORLD" instance=ExtResource("13_6umuk")]
 position = Vector2(412, -96)
