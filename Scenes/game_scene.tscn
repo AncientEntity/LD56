@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://c86371r6f6oh3"]
+[gd_scene load_steps=21 format=4 uid="uid://c86371r6f6oh3"]
 
 [ext_resource type="Texture2D" uid="uid://d4jfxfo2h0p7i" path="res://Assets/background/bush.png" id="1_ecliu"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_gtn57"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://drhmty32g8h14" path="res://Scenes/Pumpkin.tscn" id="6_x6mbr"]
 [ext_resource type="PackedScene" uid="uid://dxnvqbog5sne3" path="res://Scenes/tall_grass.tscn" id="8_xhr1o"]
 [ext_resource type="PackedScene" uid="uid://druqr3814bht6" path="res://Scenes/bugs/WalkBug.tscn" id="9_1ablv"]
+[ext_resource type="AudioStream" uid="uid://6f2wtkgxe70e" path="res://Audio/halloween.mp3" id="15_1ntfr"]
 [ext_resource type="Texture2D" uid="uid://btiyf44cbotjk" path="res://Assets/background/skybox.png" id="15_ikgm5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q4k2a"]
@@ -218,6 +219,11 @@ tile_set = ExtResource("4_5ifgc")
 [node name="Pumpkin" parent="WORLD" instance=ExtResource("6_x6mbr")]
 z_index = -1
 position = Vector2(3, -175)
+
+[node name="AbientMusic" type="AudioStreamPlayer2D" parent="WORLD"]
+stream = ExtResource("15_1ntfr")
+autoplay = true
+bus = &"Music"
 
 [node name="BaseBug" parent="." instance=ExtResource("9_1ablv")]
 visible = false

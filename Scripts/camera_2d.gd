@@ -6,6 +6,9 @@ var right_boundry
 var moveSpeed = 500
 var screen_delta = 0.25	    #% of the side of screen needed to move the camera
 
+var max_right
+var max_left
+
 var baseResolution = [1152,648]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
