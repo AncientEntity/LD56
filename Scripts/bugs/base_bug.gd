@@ -5,7 +5,8 @@ var maxHealthbarSize = 191.0;
 var health
 var maxHealth = 100.0
 var damage = 10
-var attackRays = [$LeftRay,$RightRay]
+
+@onready var attackRays = [$LeftRay,$RightRay]
 var attacking = false
 
 # Called when the node enters the scene tree for the first time.

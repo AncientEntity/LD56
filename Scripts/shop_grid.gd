@@ -119,4 +119,4 @@ func get_prices(id : int, sell : bool) -> int:
 	return 0
 
 func max() -> int:
-	return game_manager.max_left + game_manager.max_right
+	return 2
