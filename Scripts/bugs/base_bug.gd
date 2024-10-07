@@ -11,7 +11,7 @@ var attacking = false
 
 @onready var gravityRay: RayCast2D = $DownRay
 var gravity = 50
-
+var velX = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,7 +20,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:	
 	if(!gravityRay.is_colliding()):
-		self.position.y += gravity * delta
+		velX += gravity * delta
+		self.position.y += velX
+	else:
+		velX = 0
 	
 	attacking = false
 	for ray in attackRays:
