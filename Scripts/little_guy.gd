@@ -42,7 +42,6 @@ func _physics_process(delta: float) -> void:
 			WalkToObjective()
 		CEnums.ECurrentTask.FIGHTING:
 			Fight()
-	
 func Fight():
 	if Time.get_unix_time_from_system() - lastShotTime < shootDelay:
 		return

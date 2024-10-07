@@ -1,7 +1,7 @@
 extends BaseBug
 
 var direction = 1
-var speed = 15
+var speed = 50
 
 func _ready() -> void:
 	super._ready()
@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	super._process(delta)
-	
+
 func _physics_process(delta: float) -> void:
 	if not attacking:
 		move_local_x(direction * speed * delta)
