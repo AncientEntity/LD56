@@ -1,13 +1,14 @@
 extends BaseBug
 
-var direction = 0
+var direction = 1
 var speed = 15
 
 func _ready() -> void:
-	direction = -1 if global_position.x > 0 else 1
 	super._ready()
-	if direction > 0:
+	if direction == 1:
 		$WalkBug.flip_h = true
+		$WalkBug/Legs.flip_h = true
+	print(direction)
 
 func _process(delta: float) -> void:
 	super._process(delta)

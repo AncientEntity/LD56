@@ -4,7 +4,7 @@ class_name BaseBug
 var maxHealthbarSize = 191.0;
 var health
 var maxHealth = 100.0
-var damage = 10
+var damage = 20
 
 @onready var attackRays = [$LeftRay,$RightRay]
 var attacking = false

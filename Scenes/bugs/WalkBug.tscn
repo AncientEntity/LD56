@@ -59,14 +59,15 @@ script = ExtResource("2_sagtk")
 z_index = 10
 scale = Vector2(0.204333, 0.204333)
 texture = ExtResource("2_h3mox")
-offset = Vector2(-1000, 0)
+region_enabled = true
+region_rect = Rect2(2088.23, 11.3491, 2158.26, 1683.14)
 
 [node name="Legs" type="AnimatedSprite2D" parent="WalkBug" index="0"]
 z_index = 40
-position = Vector2(0, -83.1975)
+position = Vector2(-44.0458, -78.3036)
 sprite_frames = SubResource("SpriteFrames_ypfsb")
 autoplay = "default"
-frame_progress = 0.841644
+frame_progress = 0.964718
 
 [node name="LeftRay" parent="." index="2"]
 position = Vector2(-176, 0)
