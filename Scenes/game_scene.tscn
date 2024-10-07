@@ -1,20 +1,20 @@
-[gd_scene load_steps=20 format=4 uid="uid://dgniuva58gsbr"]
+[gd_scene load_steps=20 format=4 uid="uid://c86371r6f6oh3"]
 
-[ext_resource type="Texture2D" uid="uid://ntjynbstf731" path="res://Assets/background/bush.png" id="1_ecliu"]
+[ext_resource type="Texture2D" uid="uid://d4jfxfo2h0p7i" path="res://Assets/background/bush.png" id="1_ecliu"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_gtn57"]
-[ext_resource type="Texture2D" uid="uid://ctfclnmw11xu5" path="res://Assets/background/bgrass.png" id="2_71w7j"]
-[ext_resource type="Texture2D" uid="uid://c5htqt7cbwy0s" path="res://Assets/groundTiles/tall_grass_1.png" id="2_sf7u2"]
+[ext_resource type="Texture2D" uid="uid://cseokk2oen4ar" path="res://Assets/background/bgrass.png" id="2_71w7j"]
+[ext_resource type="Texture2D" uid="uid://dia7nlh3l01qq" path="res://Assets/groundTiles/tall_grass_1.png" id="2_sf7u2"]
 [ext_resource type="PackedScene" uid="uid://c85brqjbs6xhp" path="res://Scenes/camera_2d.tscn" id="2_x5va0"]
-[ext_resource type="Texture2D" uid="uid://cmv4vb1s0farn" path="res://Assets/groundTiles/tall_grass_2.png" id="3_2p8ae"]
+[ext_resource type="Texture2D" uid="uid://de83jasluexep" path="res://Assets/groundTiles/tall_grass_2.png" id="3_2p8ae"]
 [ext_resource type="TileSet" uid="uid://46uh3g7vby3q" path="res://Assets/groundTiles/groundtileset.tres" id="4_5ifgc"]
-[ext_resource type="Texture2D" uid="uid://dnm646j1x17vf" path="res://Assets/groundTiles/tall_grass_3.png" id="4_8jvw1"]
+[ext_resource type="Texture2D" uid="uid://be1ghfuelgtyl" path="res://Assets/groundTiles/tall_grass_3.png" id="4_8jvw1"]
 [ext_resource type="PackedScene" uid="uid://dnkr0qercn1qi" path="res://Scenes/shop_grid.tscn" id="4_hxhm7"]
 [ext_resource type="Script" path="res://Scripts/money_label.gd" id="5_fn7jv"]
-[ext_resource type="PackedScene" path="res://Scenes/candy.tscn" id="5_pxuxl"]
+[ext_resource type="PackedScene" uid="uid://dsub13l838g2n" path="res://Scenes/candy.tscn" id="5_pxuxl"]
 [ext_resource type="PackedScene" uid="uid://drhmty32g8h14" path="res://Scenes/Pumpkin.tscn" id="6_x6mbr"]
-[ext_resource type="PackedScene" path="res://Scenes/tall_grass.tscn" id="8_xhr1o"]
+[ext_resource type="PackedScene" uid="uid://dxnvqbog5sne3" path="res://Scenes/tall_grass.tscn" id="8_xhr1o"]
 [ext_resource type="PackedScene" uid="uid://druqr3814bht6" path="res://Scenes/bugs/WalkBug.tscn" id="9_1ablv"]
-[ext_resource type="Texture2D" uid="uid://kuxmh60qgo5e" path="res://Assets/background/skybox.png" id="15_ikgm5"]
+[ext_resource type="Texture2D" uid="uid://btiyf44cbotjk" path="res://Assets/background/skybox.png" id="15_ikgm5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q4k2a"]
 font_size = 96
@@ -122,10 +122,12 @@ scale = Vector2(1.45, 1.45)
 zoom = Vector2(0.68, 0.68)
 
 [node name="Candy" parent="Camera2D" instance=ExtResource("5_pxuxl")]
+z_index = 4096
 position = Vector2(-552, -308)
 
 [node name="money_lable" type="Label" parent="Camera2D"]
 unique_name_in_owner = true
+z_index = 4096
 offset_left = -534.0
 offset_top = -328.0
 offset_right = -343.0
@@ -159,6 +161,15 @@ label_settings = SubResource("LabelSettings_q4k2a")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+z_index = 3000
+offset_left = -771.724
+offset_top = -543.448
+offset_right = 781.276
+offset_bottom = 898.552
+mouse_filter = 2
+color = Color(0, 0, 0, 0.470588)
+
 [node name="WORLD" type="Node" parent="."]
 
 [node name="Ground" type="StaticBody2D" parent="WORLD"]
@@ -184,12 +195,6 @@ scale = Vector2(1.405, 1.405)
 shape = SubResource("WorldBoundaryShape2D_re4sx")
 one_way_collision = true
 
-[node name="ColorRect" type="ColorRect" parent="WORLD/GrassRight/RightWall/CollisionShape2D"]
-offset_left = -125.0
-offset_top = -1.0
-offset_right = 113.0
-offset_bottom = 8.0
-
 [node name="GrassLeft" parent="WORLD" instance=ExtResource("8_xhr1o")]
 position = Vector2(-1851, -578)
 
@@ -204,11 +209,6 @@ rotation = 1.5708
 scale = Vector2(1.405, 1.405)
 shape = SubResource("WorldBoundaryShape2D_rilrv")
 one_way_collision = true
-
-[node name="ColorRect" type="ColorRect" parent="WORLD/GrassLeft/LeftWall/CollisionShape2D"]
-offset_left = -113.0
-offset_right = 40.0
-offset_bottom = 14.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="WORLD"]
 z_index = 150

@@ -33,7 +33,7 @@ scale = Vector2(1.047, 1)
 script = ExtResource("1_gvc14")
 
 [node name="Label" type="Label" parent="."]
-z_index = 100
+z_index = 4000
 offset_left = 481.194
 offset_top = 15.0
 offset_right = 623.194

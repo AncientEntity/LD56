@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://dro24nojeaeh7"]
+
+[ext_resource type="Script" path="res://Scripts/baseprojectile.gd" id="1_emqsk"]
+[ext_resource type="Texture2D" uid="uid://dfygrxgw7i6et" path="res://Assets/groundTiles/tower_top.png" id="2_follg"]
+[ext_resource type="Texture2D" uid="uid://bp6hstuswo7tg" path="res://Assets/groundTiles/colorCrcl.png" id="3_8k36r"]
+
+[sub_resource type="Animation" id="Animation_be5k6"]
+resource_name = "Wizard_ball_animation"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.5708, 3.14159, 4.71239, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_0y4cw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qp65c"]
+_data = {
+"RESET": SubResource("Animation_0y4cw"),
+"Wizard_ball_animation": SubResource("Animation_be5k6")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_480bn"]
+
+[node name="Area2D" type="Area2D"]
+scale = Vector2(0.214, 0.214)
+script = ExtResource("1_emqsk")
+
+[node name="WizardBall" type="Sprite2D" parent="."]
+scale = Vector2(0.395, 0.395)
+texture = ExtResource("2_follg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WizardBall"]
+libraries = {
+"": SubResource("AnimationLibrary_qp65c")
+}
+autoplay = "Wizard_ball_animation"
+
+[node name="Sprite2D" type="Sprite2D" parent="WizardBall"]
+modulate = Color(0.0891, 0.99, 0.77979, 0.184314)
+position = Vector2(0.000181082, -94.939)
+scale = Vector2(12, 12)
+texture = ExtResource("3_8k36r")
+
+[node name="Sprite2D2" type="Sprite2D" parent="WizardBall"]
+modulate = Color(0.0891, 0.99, 0.77979, 0.184314)
+position = Vector2(0.000181082, -94.939)
+scale = Vector2(7, 7)
+texture = ExtResource("3_8k36r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.53, 0)
+scale = Vector2(14, 14)
+shape = SubResource("CircleShape2D_480bn")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

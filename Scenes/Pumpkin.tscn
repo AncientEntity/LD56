@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://drhmty32g8h14"]
+[gd_scene load_steps=10 format=3 uid="uid://drhmty32g8h14"]
 
-[ext_resource type="Texture2D" uid="uid://cm34736khiacn" path="res://Assets/groundTiles/Pumpkin.png" id="1_hauf0"]
-[ext_resource type="Texture2D" uid="uid://rm6xofcxhjsw" path="res://Assets/candleAssets/candle.png" id="2_qdwyv"]
-[ext_resource type="Texture2D" uid="uid://dpnvoptnhhj5y" path="res://Assets/candleAssets/flame2.png" id="3_11p3p"]
-[ext_resource type="Texture2D" uid="uid://cksm1ekr5nj46" path="res://Assets/candleAssets/flame1.png" id="4_dua28"]
-[ext_resource type="Texture2D" uid="uid://dsbalgvfl6yso" path="res://Assets/candleAssets/flame3.png" id="5_g202a"]
-[ext_resource type="Texture2D" uid="uid://bbarablqt6ju4" path="res://Assets/candleAssets/flame4.png" id="6_6lmxt"]
-[ext_resource type="Texture2D" uid="uid://b3ieqfse4cqy3" path="res://Assets/candleAssets/flame5.png" id="7_kwnbq"]
+[ext_resource type="Texture2D" uid="uid://cdalwsq03fnrq" path="res://Assets/groundTiles/Pumpkin.png" id="1_hauf0"]
+[ext_resource type="Texture2D" uid="uid://c22l5rrl88c3j" path="res://Assets/candleAssets/candle.png" id="2_qdwyv"]
+[ext_resource type="Texture2D" uid="uid://dnuhxmssbsh02" path="res://Assets/candleAssets/flame2.png" id="3_11p3p"]
+[ext_resource type="Texture2D" uid="uid://dcr5h7kp2bhdb" path="res://Assets/candleAssets/flame1.png" id="4_dua28"]
+[ext_resource type="Texture2D" uid="uid://gt7j01xtq24p" path="res://Assets/candleAssets/flame3.png" id="5_g202a"]
+[ext_resource type="Texture2D" uid="uid://bj2eh5oj8sw2u" path="res://Assets/candleAssets/flame4.png" id="6_6lmxt"]
+[ext_resource type="Texture2D" uid="uid://berappkba2a0h" path="res://Assets/candleAssets/flame5.png" id="7_kwnbq"]
+[ext_resource type="Texture2D" uid="uid://bp6hstuswo7tg" path="res://Assets/groundTiles/colorCrcl.png" id="8_bp2we"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tfydl"]
 animations = [{
@@ -88,7 +89,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("5_g202a")
 }],
-"loop": false,
+"loop": true,
 "name": &"fire2",
 "speed": 15.0
 }, {
@@ -143,11 +144,13 @@ scale = Vector2(0.532407, 0.532407)
 texture = ExtResource("1_hauf0")
 
 [node name="Candle" type="Sprite2D" parent="."]
+z_index = 4000
 position = Vector2(-78.8869, 291.13)
 scale = Vector2(1.1358, 1.3251)
 texture = ExtResource("2_qdwyv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Candle"]
+z_index = 4096
 position = Vector2(1, -8)
 sprite_frames = SubResource("SpriteFrames_tfydl")
 animation = &"fire2"
@@ -155,27 +158,52 @@ autoplay = "fire1"
 frame = 8
 frame_progress = 1.0
 
+[node name="Sprite2D" type="Sprite2D" parent="Candle"]
+modulate = Color(0.71, 0.46789, 0.0497, 0.352941)
+z_index = 4091
+position = Vector2(-3.30743, 14.2935)
+scale = Vector2(0.49477, 0.503375)
+texture = ExtResource("8_bp2we")
+
 [node name="Candle2" type="Sprite2D" parent="."]
+z_index = 4000
 position = Vector2(5.725, 265.36)
 scale = Vector2(1.33312, 1.5553)
 texture = ExtResource("2_qdwyv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Candle2"]
+z_index = 4096
 position = Vector2(1, -8)
 sprite_frames = SubResource("SpriteFrames_tfydl")
 animation = &"fire2"
 autoplay = "fire2"
 
+[node name="Sprite2D" type="Sprite2D" parent="Candle2"]
+modulate = Color(0.71, 0.46789, 0.0497, 0.352941)
+z_index = 4091
+position = Vector2(-3.30743, 14.2935)
+scale = Vector2(0.49477, 0.503375)
+texture = ExtResource("8_bp2we")
+
 [node name="Candle3" type="Sprite2D" parent="."]
+z_index = 4000
 position = Vector2(86.4, 309.913)
 scale = Vector2(0.977322, 1.14021)
 texture = ExtResource("2_qdwyv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Candle3"]
+z_index = 4090
 position = Vector2(1, -8)
 sprite_frames = SubResource("SpriteFrames_tfydl")
 animation = &"fire3"
 autoplay = "fire3"
+
+[node name="Sprite2D" type="Sprite2D" parent="Candle3"]
+modulate = Color(0.71, 0.46789, 0.0497, 0.352941)
+z_index = 4091
+position = Vector2(-3.30743, 14.2935)
+scale = Vector2(0.49477, 0.503375)
+texture = ExtResource("8_bp2we")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visibility_layer = 2
@@ -187,3 +215,17 @@ offset_bottom = 432.113
 mouse_filter = 2
 color = Color(0.197744, 0.0836477, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.71, 0.46789, 0.0497, 0.352941)
+z_index = 4092
+position = Vector2(-200.035, 62.9218)
+scale = Vector2(2.25218, 1.66087)
+texture = ExtResource("8_bp2we")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.71, 0.46789, 0.0497, 0.352941)
+z_index = 4092
+position = Vector2(137.113, 63.8609)
+scale = Vector2(2.25218, 1.66087)
+texture = ExtResource("8_bp2we")

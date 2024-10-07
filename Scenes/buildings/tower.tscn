@@ -1,11 +1,145 @@
-[gd_scene load_steps=3 format=3 uid="uid://r5pwxfyn4vt0"]
+[gd_scene load_steps=10 format=3 uid="uid://r5pwxfyn4vt0"]
 
 [ext_resource type="PackedScene" uid="uid://bbmokkmpfdeg6" path="res://Scenes/buildings/BaseBuilding.tscn" id="1_b1gqn"]
-[ext_resource type="Texture2D" uid="uid://brr2trwc64gwx" path="res://Assets/groundTiles/tower.png" id="2_fdg04"]
+[ext_resource type="Texture2D" uid="uid://t6m4jk2chp0x" path="res://Assets/groundTiles/tower.png" id="2_fdg04"]
+[ext_resource type="Script" path="res://Scripts/wizard_tower.gd" id="3_0agsb"]
+[ext_resource type="Texture2D" uid="uid://dfygrxgw7i6et" path="res://Assets/groundTiles/tower_top.png" id="4_vs4ps"]
+[ext_resource type="Texture2D" uid="uid://bp6hstuswo7tg" path="res://Assets/groundTiles/colorCrcl.png" id="5_rwnsm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x4eah"]
+radius = 195.164
+
+[sub_resource type="Animation" id="Animation_q4owa"]
+resource_name = "TowerTop"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.5708, 3.14159, 4.71239, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -3.14159, -6.28319, -9.42478, -12.5664]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -4.71239, -9.42478, -14.1372, -18.8496]
+}
+
+[sub_resource type="Animation" id="Animation_eiyhj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2hojc"]
+_data = {
+"RESET": SubResource("Animation_eiyhj"),
+"TowerTop": SubResource("Animation_q4owa")
+}
 
 [node name="BaseBuilding" instance=ExtResource("1_b1gqn")]
 
 [node name="Tower" type="Sprite2D" parent="." index="0"]
-position = Vector2(95, 42)
-scale = Vector2(0.7, 0.7)
+position = Vector2(96, -22)
+scale = Vector2(0.213529, 0.213529)
 texture = ExtResource("2_fdg04")
+script = ExtResource("3_0agsb")
+
+[node name="AgroZone" type="Area2D" parent="Tower" index="0"]
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/AgroZone" index="0"]
+position = Vector2(8.57143, 1.42857)
+scale = Vector2(7, 7)
+shape = SubResource("CircleShape2D_x4eah")
+
+[node name="TowerTop" type="Sprite2D" parent="Tower" index="1"]
+z_index = 4090
+position = Vector2(-6.10352e-05, -365.289)
+scale = Vector2(0.394628, 0.394628)
+texture = ExtResource("4_vs4ps")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tower/TowerTop" index="0"]
+modulate = Color(0.0891, 0.99, 0.77979, 0.184314)
+position = Vector2(26.192, 2.45701)
+scale = Vector2(12, 12)
+texture = ExtResource("5_rwnsm")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Tower/TowerTop" index="1"]
+modulate = Color(0.0891, 0.99, 0.77979, 0.184314)
+position = Vector2(26.192, 2.45701)
+scale = Vector2(7, 7)
+texture = ExtResource("5_rwnsm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tower/TowerTop" index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_2hojc")
+}
+autoplay = "TowerTop"
+
+[node name="HealthBar" parent="UI" index="0"]
+offset_left = 4.5
+offset_top = -114.0
+offset_right = 191.5
+offset_bottom = -104.0
+
+[connection signal="area_entered" from="Tower/AgroZone" to="Tower" method="_on_agro_zone_area_entered"]
+[connection signal="area_exited" from="Tower/AgroZone" to="Tower" method="_on_agro_zone_area_exited"]
