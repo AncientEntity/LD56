@@ -20,6 +20,9 @@ var max_offset = 100.0
 
 var baseResolution = [1152,648]
 
+var pauseMenuScene = preload("res://Scenes/pause_menu.tscn")
+var activePauseMenu = null
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var mouse_position = get_viewport().get_mouse_position()
@@ -37,3 +40,14 @@ func _process(delta: float) -> void:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	
+	if Input.is_action_just_pressed("pause"):
+		if not activePauseMenu:
+			activePauseMenu = pauseMenuScene.instantiate()
+			add_child(activePauseMenu)
+			Engine.time_scale = 0
+		else:
+			activePauseMenu.queue_free()
+			activePauseMenu = null
+			Engine.time_scale = 1
+			

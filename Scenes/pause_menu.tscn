@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch1vv4cg2sm5e"]
+
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_ibxkl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6sdx1"]
+font_size = 91
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.5
+offset_top = -168.5
+offset_right = 168.5
+offset_bottom = 168.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ibxkl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 4096
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0784314, 0.0784314, 0.0784314, 0.717647)
+
+[node name="Label" type="Label" parent="."]
+z_index = 4096
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.5
+offset_right = 24.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "MENU"
+label_settings = SubResource("LabelSettings_6sdx1")
+horizontal_alignment = 1
+
+[node name="MMButton" type="Button" parent="."]
+z_index = 4096
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.0345
+offset_top = 138.155
+offset_right = 85.9655
+offset_bottom = 189.155
+grow_horizontal = 2
+text = "Main Menu"
+
+[node name="ExitButton" type="Button" parent="."]
+z_index = 4096
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.0345
+offset_top = 214.017
+offset_right = 85.9655
+offset_bottom = 265.017
+grow_horizontal = 2
+text = "Exit"
+
+[connection signal="button_down" from="MMButton" to="." method="_on_mm_button_button_down"]
+[connection signal="button_down" from="ExitButton" to="." method="_on_exit_button_button_down"]
