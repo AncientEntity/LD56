@@ -174,8 +174,8 @@ color = Color(0, 0, 0, 0.470588)
 
 [node name="Ground" type="StaticBody2D" parent="WORLD"]
 position = Vector2(0, 64)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 5
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WORLD/Ground"]
 position = Vector2(-1, -12)
@@ -248,4 +248,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BaseBug" parent="." instance=ExtResource("9_1ablv")]
-position = Vector2(331, -524)
+position = Vector2(-849, -119)

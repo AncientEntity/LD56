@@ -5,6 +5,8 @@
 
 [node name="tile_shop" type="MenuButton"]
 modulate = Color(1, 1, 1, 0)
+light_mask = 4
+visibility_layer = 4
 z_index = 5
 z_as_relative = false
 custom_minimum_size = Vector2(150, 150)
