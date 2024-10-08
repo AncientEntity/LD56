@@ -87,7 +87,7 @@ func handleWave(delta : float):
 			var size_rng = randf_range((0.3 + round_mod), 0.6 + round_mod)
 			newBug.scale *= size_rng-0.05
 			newBug.speed = newBug.speed + newBug.speed * (0.5 + round_mod)/(size_rng*2)
-			newBug.health = float(newBug.maxHealth) * size_rng + float(roundNumber) * 30.0
+			newBug.maxHealth = float(newBug.maxHealth) * size_rng + float(roundNumber) * 30.0
 			newBug.damage = (float(newBug.damage) + 2*roundNumber) * size_rng
 			get_node("../WORLD").add_child(newBug)
 			newBug.position.y -= 200
